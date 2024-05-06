@@ -1,0 +1,2 @@
+PORT=4000
+DATABASE_URL=postgresql://CO2%20charts_owner:ZG4FojexX6TK@ep-super-pond-a2jr4g28.eu-central-1.aws.neon.tech/CO2%20charts?sslmode=require
