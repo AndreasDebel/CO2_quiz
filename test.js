@@ -1,5 +1,3 @@
 hest
 hest
 fiskefars
-
-hestebåd
