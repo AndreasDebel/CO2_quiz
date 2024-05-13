@@ -17,7 +17,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "nodemon": "^3.1.0",
-    "pg": "^8.11.5"
+    "pg": "^8.11.5",
+    "y": "^0.3.2"
   },
   "description": "Så er der lige lavet en ReadMe"
 }
