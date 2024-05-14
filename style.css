@@ -9,14 +9,25 @@
     background-size: cover; /* Add this line */
 }
 #knap2 {
-    position: relative;
-    left: -500;
-    top: 400;
+    position: a;
     width: 300px;
-    border: 3px solid #73AD21;
     padding: 10px;
+    color: white;
+    background-color: rgba(73, 68, 68, 0.1);
+    border: 1px solid white;
+    border-radius: 10px;
   }
 
+  @media (max-width: 768px) {
+    #knap2 {
+        width: 200px; /* Example: Adjust width for smaller screens */
+    }
+}
+
+#knap2:hover {
+    background-color: rgba(50, 72, 49, 0.9);
+    border: 1px solid white;
+}
  
 
 .innermain {
@@ -46,3 +57,6 @@ h2 {
     
 }
 
+#graf {
+    background-color: rgba(217, 216, 216, 0.95);
+}
