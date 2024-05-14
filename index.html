@@ -1,98 +1,87 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuizzProject</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
-    <body>
-        
-        
-       
-        <div class="main" id="main2">
-            <div class="innermain" id="inner2">
-            <button id="knap2">Update Chart</button></div>
-        </div>
-        <div class="main" id="main3">
-            <div class="innermain" id="inner3"></div>
-        </div>
-        <div class="main" id="main4">
-            <div class="innermain" id="inner4"></div>
-        </div>
-        <div class="main" id="main5">
-            <div class="innermain" id="inner5"></div>
-        </div>
-        <div class="main" id="main6">
-            <div class="innermain" id="inner6"></div>
-        </div>
-        <div class="main" id="main7">
-            <div class="innermain" id="inner7"></div>
-        </div>
-        <div class="main" id="main8">
-            <div class="innermain" id="inner8"></div>
-        </div>
-        <div class="main" id="main9">
-            <div class="innermain" id="inner9"></div>
-        </div>
-        <div class="main" id="main10">
-            <div class="innermain" id="inner10"></div>
-        </div>
-        <div class="main" id="main11">
-            <div class="innermain" id="inner11"></div>
-        </div>
-        <div class="main" id="main12">
-            <div class="innermain" id="inner12"></div>
-        </div>
-               <div id="chart"></div>
+  <body>
 
+ 
+    <div class="main" id="main0">
+        <div class="innermain" id="inner3"></div>
+      </div>
 
+    <div class="main" id="main1">
+        <div class="innermain" id="inner3"></div>
+      </div>
+    <div class="main" id="main2">
+      <div class="innermain" id="inner2">
+        <h2>En El-bil udleder mere co2 end hvad man kunne forvente. Produktionen af et batteri er bla bla bla bla</h2>
+        <button id="knap2">Update Chart</button>
+      </div>
+    </div>
 
+    <div class="main" id="main3">
+      <div class="innermain" id="inner3"></div>
+    </div>
+    <div class="main" id="main4">
+      <div class="innermain" id="inner4"></div>
+    </div>
+    <div class="main" id="main5">
+      <div class="innermain" id="inner5"></div>
+    </div>
+    <div class="main" id="main6">
+      <div class="innermain" id="inner6"></div>
+    </div>
+    <div class="main" id="main7">
+      <div class="innermain" id="inner7"></div>
+    </div>
+    <div class="main" id="main8">
+      <div class="innermain" id="inner8"></div>
+    </div>
+    <div class="main" id="main9">
+      <div class="innermain" id="inner9"></div>
+    </div>
+    <div class="main" id="main10">
+      <div class="innermain" id="inner10"></div>
+    </div>
+    <div class="main" id="main11">
+      <div class="innermain" id="inner11"></div>
+    </div>
+    <div class="main" id="main12">
+      <div class="innermain" id="inner12"></div>
+    </div>
+    <div id="chart"></div>
 
+    <script>
+      // Specify the API endpoint for food
+      const apiUrl = "http://localhost:4000/foods";
 
+      // Make a GET request using the Fetch API
+      fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((foods) => {
+          // Process the retrieved foods
+          let html = "";
+          foods.forEach((food) => {
+            html += `<p>${food.produkt}</p>` + `<p> CO2e = ${food.co2e_kg}</p>`;
+            console.log(food);
+          });
+        })
 
-
-
-
-
-
-
-
-
-
-
-
-       <script>
-            // Specify the API endpoint for food
-            const apiUrl = 'http://localhost:4000/foods';
-
-            // Make a GET request using the Fetch API
-            fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(foods => {
-                    // Process the retrieved foods
-                    let html = '';
-                    foods.forEach(food => {
-                        html += `<p>${food.produkt}</p>` + `<p> CO2e = ${food.co2e_kg}</p>`;
-                        console.log(food);
-                    });
-                    
-                   ; 
-                })
-                
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-
-        </script>
-        <script src="graf1.js"></script>
-        
-    </body>
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    </script>
+    <script src="graf1.js"></script>
+  </body>
 </html>
