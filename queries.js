@@ -22,7 +22,7 @@ const getFoods = (request, response) => {
   //route for /insert-food
 const insertFood = (request, response) => {
     const { produkt, kategori, co2e_kg, landbrug, iluc, forarbejdning, emballage, transport, detail } = request.body;
-    pool.query(
+    pool.quer(y
       `INSERT INTO klimadata_tmp (produkt, kategori, co2e_kg, landbrug, iluc, forarbejdning, emballage, transport, detail) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
       [produkt, kategori, co2e_kg, landbrug, iluc, forarbejdning, emballage, transport, detail],
       (error, results) => {

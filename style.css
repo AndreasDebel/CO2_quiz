@@ -1,0 +1,45 @@
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Images/Background.jpg);
+    background-size: cover; /* Add this line */
+}
+
+
+
+
+.innermain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 90vw;
+    border: 5px solid rgb(232, 232, 232);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    display: block;
+    width: 355px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.01);
+    color: white;
+    border: 2px solid white;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 200px;
+}
+
+
+
+#innermain2 {
+    width: 200px;
+}
