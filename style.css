@@ -9,9 +9,12 @@
     background-size: cover; /* Add this line */
 }
 #knap2 {
-    align-items: left; 
-    text-align: left;
-    
+    position: absolute;
+    left: 150;
+    bottom: 150;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
   }
 
 
