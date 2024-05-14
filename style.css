@@ -17,6 +17,11 @@
     padding: 10px;
   }
 
+  #graf {
+    text-align: center;
+    margin-top: 40px;
+    background-color: rgba(73, 68, 68, 0.0) !important;
+  }
 
 .innermain {
     display: flex;
