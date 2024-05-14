@@ -17,6 +17,11 @@
     padding: 10px;
   }
 
+  #graf {
+    text-align: center;
+    margin-top: 40px;
+    background-color: rgba(73, 68, 68, 0.0) !important;
+  }
 
 .innermain {
     display: flex;
@@ -27,7 +32,7 @@
     width: 90vw;
     border: 5px solid rgb(232, 232, 232);
     border-radius: 20px;
-    background-color: rgba(73, 68, 68, 0,3);
+    background-color: rgba(73, 68, 68, 0.5);
 }
 
 .button {
@@ -44,11 +49,6 @@ h2 {
     position: relative;
     
 }
-
-#chart {
-    text-align: center;
-    margin-top: 40px;
-  }
 
 
 

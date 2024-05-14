@@ -32,7 +32,7 @@ var data = [
   
   // Create SVG and padding for the chart
   const svg = d3
-    .select("#inner2")
+    .select("#graf")
     .append("svg")
     .attr("height", 300)
     .attr("width", 600);
