@@ -1,6 +1,6 @@
 // Width, height and padding for svg bar elements
-const w = 500;
-const h = 100;
+const w = 200;
+const h = 50;
 const padding = 2;
 
 //Data to be displayed
@@ -9,7 +9,7 @@ const dataset = [
 ];
 
 //Create SVG element with width and height based on w and h variables
-const svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
+const svg = d3.select("#innermain2").append("svg").attr("width", w).attr("height", h);
 
 //Create bars based on data and append to svg
 // 1st:
