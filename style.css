@@ -8,8 +8,11 @@
     background-image: url(Images/Background.jpg);
     background-size: cover; /* Add this line */
 }
-
-
+#knap2 {
+    align-items: left; 
+    text-align: left;
+    
+  }
 
 
 .innermain {
@@ -21,7 +24,7 @@
     width: 90vw;
     border: 5px solid rgb(232, 232, 232);
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0,8);
 }
 
 .button {
@@ -37,6 +40,11 @@ h1 {
     color: white;
     margin-bottom: 200px;
 }
+
+#chart {
+    text-align: center;
+    margin-top: 40px;
+  }
 
 
 

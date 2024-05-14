@@ -6,13 +6,15 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
     <body>
         
        
        
         <div class="main" id="main2">
-            <div class="innermain" id="inner2"></div>
+            <div class="innermain" id="inner2">
+            <button id="knap2">Update Chart</button></div>
         </div>
         <div class="main" id="main3">
             <div class="innermain" id="inner3"></div>
@@ -44,7 +46,7 @@
         <div class="main" id="main12">
             <div class="innermain" id="inner12"></div>
         </div>
-       
+               <div id="chart"></div>
 
 
 
@@ -62,9 +64,6 @@
 
 
 
-
-
- 
        <script>
             // Specify the API endpoint for food
             const apiUrl = 'http://localhost:4000/foods';
@@ -93,7 +92,7 @@
                 });
 
         </script>
-        <script src="barchart.js"></script>
+        <script src="graf1.js"></script>
         
     </body>
 </html>
