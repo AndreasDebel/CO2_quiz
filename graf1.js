@@ -34,8 +34,8 @@ var data = [
   const svg = d3
     .select("#graf")
     .append("svg")
-    .attr("height", 300)
-    .attr("width", 600);
+    .attr("height", 400)
+    .attr("width", 800);
   const margin = { top: 0, bottom: 20, left: 30, right: 20 };
   const chart = svg.append("g").attr("transform", `translate(${margin.left},0)`);
   const width = +svg.attr("width") - margin.left - margin.right;
@@ -119,7 +119,7 @@ var data = [
   
   updateChart(data);
   // Update chart when button is clicked
-  d3.select("button").on("click", () => {
+  d3.select("#knap2").on("click", () => {
     // Create new fake data
     const newData = data.map(row => {
       return { ...row, popularity: row.popularity * Math.random() };
