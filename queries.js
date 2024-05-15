@@ -19,6 +19,18 @@ const getFoods = (request, response) => {
     });
   };
 
+//route for /emission
+const getEmission = (request, response) => {
+    pool.query("SELECT * FROM emission", (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+  };
+
+
+
   //route for /insert-food
 const insertFood = (request, response) => {
     const { produkt, kategori, co2e_kg, landbrug, iluc, forarbejdning, emballage, transport, detail } = request.body;
@@ -103,7 +115,8 @@ const populateFoods = (request, response) => {
   }
 
 module.exports = {
-  getFoods, 
+  getFoods,
+  getEmission,
   insertFood,
   populateFoods,
 };
