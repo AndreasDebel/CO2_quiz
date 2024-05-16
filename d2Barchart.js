@@ -23,7 +23,7 @@ const dataset = [
 ];
 
 //SVG-elementet tilføjes til body
-const svg = d3.select("#graf2")
+const svg1 = d3.select("#graf2")
 .append("svg")
 .attr("width", w)
 .attr("height", h);
