@@ -121,8 +121,5 @@ var data = [
   // Update chart when button is clicked
   d3.select("#knap2").on("click", () => {
     // Create new fake data
-    const newData = data.map(row => {
-      return { ...row, popularity: row.popularity * Math.random() };
-    });
     updateChart(newData);
   });
