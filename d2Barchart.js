@@ -1,4 +1,4 @@
-// Width og height til SVG
+// Width og height til SVG1
 const w = 800;
 const h = 500;
 //Padding for at søjlerne ikke skal sidde helt op af hinanden
@@ -23,7 +23,7 @@ const dataset = [
 ];
 
 //SVG-elementet tilføjes til body
-const svg1 = d3.select("#graf2")
+const svg = d3.select("#graf2")
 .append("svg")
 .attr("width", w)
 .attr("height", h);

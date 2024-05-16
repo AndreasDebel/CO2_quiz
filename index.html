@@ -85,32 +85,7 @@
     </div>
     <div id="chart"></div>
 
-    <!-- Hent madvarer via API og list dem på siden - bare som test  -->
-    <script>
-      // Specify the API endpoint for food
-      const apiUrl = "http://localhost:4000/foods";
-
-      // Make a GET request using the Fetch API
-      fetch(apiUrl)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((foods) => {
-          // Process the retrieved foods
-          let html = "";
-          foods.forEach((food) => {
-            html += `<p>${food.produkt}</p>` + `<p> CO2e = ${food.co2e_kg}</p>`;
-            // console.log(food);
-          });
-        })
-
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    </script>
+   
 
     
     <script src="graf1.js"></script>
