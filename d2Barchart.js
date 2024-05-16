@@ -23,7 +23,7 @@ const dataset = [
 ];
 
 //SVG-elementet tilføjes til body
-const svg = d3.select("#graf2")
+const svg1 = d3.select("#graf2")
 .append("svg")
 .attr("width", w)
 .attr("height", h);
@@ -88,7 +88,7 @@ function createDefaultChart(dataset) {
    * Vi giver også hver søjle en unik key.
    * Derudover kommer vi akser og labels på også.
    * */
-  svg
+  svg1
     .selectAll("rect")
     /**
      * Der skal gives en key til hvert datapunkt, så d3 kan genkende dem.
@@ -190,12 +190,12 @@ function createAxisX(xScale, isFastest) {
 }
 
 function addAxes() {
-  svg
+  svg1
     .append("g")
     .attr("transform", "translate(0," + (h - padding - axisPadding) + ")")
     .attr("id", "xAxis");
 
-  svg
+  svg1
     .append("g")
     .attr("transform", "translate(" + (padding + axisPadding) + ",0)")
     .attr("id", "yAxis")
@@ -206,7 +206,7 @@ function addAxes() {
 }
 
 function formatAxisX() {
-  svg
+  svg1
     .select("#xAxis")
     .call(xAxis)
     //Her fjernes tickmarks fra x-aksen - det synes jeg ser pænere ud
@@ -220,7 +220,7 @@ function animateData(data, isFastest) {
   setUp(data, isFastest);
   formatAxisX();
   // select alle 'rect'.
-  svg
+  svg1
     .selectAll("rect")
     .data(data, function (d) {
       // Vælg key til hvert dataelement
@@ -248,7 +248,7 @@ function animateData(data, isFastest) {
 
 
 function formatAxisX() {
-  svg
+  svg1
     .select("#xAxis")
     .call(xAxis)
     .call(xAxis.tickSize(0))
