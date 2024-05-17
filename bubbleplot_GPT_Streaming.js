@@ -39,7 +39,7 @@ function createBubbleChart() {
   // append the svg object to the body of the page
   let heightGPT = 460
   let widthGPT = 460
-  let svgGPT = d3.select("#inner3")
+  let svgGPT = d3.select("#inner4")
     .append("svg")
       .attr("width", widthGPT)
       .attr("height", heightGPT)
