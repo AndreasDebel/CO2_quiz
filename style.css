@@ -32,8 +32,8 @@
 
 .innermain {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: ROW;
+    justify-content: space-evenly;
     align-items: center;
     height: 80vh;
     width: 90vw;
