@@ -1,128 +1,124 @@
-// Fake data
-var data = [
-    {
-      year: 2000,
-      popularity: 50
-    },
-    {
-      year: 2001,
-      popularity: 150
-    },
-    {
-      year: 2002,
-      popularity: 200
-    },
-    {
-      year: 2003,
-      popularity: 130
-    },
-    {
-      year: 2004,
-      popularity: 240
-    },
-    {
-      year: 2005,
-      popularity: 380
-    },
-    {
-      year: 2006,
-      popularity: 420
-    }
-  ];
-  
-  // Create SVG and padding for the chart
-  const svg = d3
-    .select("#inner2")
-    .append("svg")
-    .attr("height", 300)
-    .attr("width", 600);
-  const margin = { top: 0, bottom: 20, left: 30, right: 20 };
-  const chart = svg.append("g").attr("transform", `translate(${margin.left},0)`);
-  const width = +svg.attr("width") - margin.left - margin.right;
-  const height = +svg.attr("height") - margin.top - margin.bottom;
-  const grp = chart
-    .append("g")
-    .attr("transform", `translate(-${margin.left},-${margin.top})`);
-  
-  // Add empty scales group for the scales to be attatched to on update 
-  chart.append("g").attr("class", "x-axis");
-  chart.append("g").attr("class", "y-axis");
-  
-  // Add empty path
-  const path = grp
-    .append("path")
-    .attr("transform", `translate(${margin.left},0)`)
-    .attr("fill", "none")
-    .attr("stroke", "steelblue")
-    .attr("stroke-linejoin", "round")
-    .attr("stroke-linecap", "round")
-    .attr("stroke-width", 1.5);
-  
-  function updateScales(data) {
-    // Create scales
-    const yScale = d3
-      .scaleLinear()
+// Fake data for two lines
+var data2 = [
+  { tid: 0, CO2e: 0 },
+  { tid: 5, CO2e: 241 },
+  { tid: 10, CO2e: 482 },
+  { tid: 15, CO2e: 723 },
+  { tid: 20, CO2e: 964 },
+  { tid: 25, CO2e: 1205 },
+  { tid: 30, CO2e: 1446 }
+];
+var data1 = [
+  { tid: 0, CO2e: 0 },
+  { tid: 5, CO2e: 10 },
+  { tid: 10, CO2e: 20 },
+  { tid: 15, CO2e: 30 },
+  { tid: 20, CO2e: 40 },
+  { tid: 25, CO2e: 50 },
+  { tid: 30, CO2e: 60 }
+];
+
+// Create SVG and padding for the chart
+const svg = d3.select("#graf")
+  .append("svg")
+  .attr("height", 400)
+  .attr("width", 800);
+
+const margin = { top: 0, bottom: 20, left: 40, right: 20 };
+const chart = svg.append("g")
+  .attr("transform", `translate(${margin.left},0)`);
+
+const width = +svg.attr("width") - margin.left - margin.right;
+const height = +svg.attr("height") - margin.top - margin.bottom;
+const grp = chart.append("g")
+  .attr("transform", `translate(-${margin.left},-${margin.top})`);
+
+// Add empty scales group for the scales to be attached to on update 
+chart.append("g").attr("class", "x-axis");
+chart.append("g").attr("class", "y-axis");
+
+// Add empty paths for two lines
+const path1 = grp
+   .append("path")
+  .attr("transform", `translate(${margin.left},0)`)
+  .attr("fill", "none")
+  .attr("stroke", "steelblue")
+  .attr("stroke-linejoin", "round")
+  .attr("stroke-linecap", "round")
+  .attr("stroke-width", 5);
+
+const path2 = grp
+   .append("path")
+  .attr("transform", `translate(${margin.left},0)`)
+  .attr("fill", "none")
+  .attr("stroke", "red")
+  .attr("stroke-linejoin", "round")
+  .attr("stroke-linecap", "round")
+  .attr("stroke-width", 5);
+
+function updateScales(data1, data2) {
+  const yMax = Math.max(d3.max(data1, d => d.CO2e), d3.max(data2, d => d.CO2e));
+  const yScale = d3.scaleLinear()
       .range([height, 0])
-      .domain([0, d3.max(data, dataPoint => dataPoint.popularity)]);
-    const xScale = d3
-      .scaleLinear()
+      .domain([0, yMax]);
+
+  const xScale = d3.scaleLinear()
       .range([0, width])
-      .domain(d3.extent(data, dataPoint => dataPoint.year));
-    return { yScale, xScale };
-  }
-  
-  function createLine(xScale, yScale) {
-    return line = d3
-    .line()
-    .x(dataPoint => xScale(dataPoint.year))
-    .y(dataPoint => yScale(dataPoint.popularity));
-  }
-  
-  function updateAxes(data, chart, xScale, yScale) {
-    chart
-      .select(".x-axis")
+      .domain(d3.extent(data1, d => d.tid));
+
+  return { yScale, xScale };
+}
+
+function createLine(xScale, yScale) {
+  return d3.line()
+      .x(d => xScale(d.tid))
+      .y(d => yScale(d.CO2e));
+}
+
+function updateAxes(chart, xScale, yScale) {
+  chart.select(".x-axis")
       .attr("transform", `translate(0,${height})`)
-      .call(d3.axisBottom(xScale).ticks(data.length));
-    chart
-      .select(".y-axis")
+      .call(d3.axisBottom(xScale).ticks(8));
+
+  chart.select(".y-axis")
       .attr("transform", `translate(0, 0)`)
-      .call(d3.axisLeft(yScale));
-  }
-  
-  function updatePath(data, line) {
-    const updatedPath = d3
-      .select("path")
+      .call(d3.axisLeft(yScale).ticks(10));
+}
+
+function updatePath(path, data, line) {
+  const updatedPath = path
       .interrupt()
       .datum(data)
       .attr("d", line);
-  
-    const pathLength = updatedPath.node().getTotalLength();
-    // D3 provides lots of transition options, have a play around here:
-    // https://github.com/d3/d3-transition
-    const transitionPath = d3
-      .transition()
+
+  const pathLength = updatedPath.node().getTotalLength();
+  const transitionPath = d3.transition()
       .ease(d3.easeSin)
       .duration(7000);
-    updatedPath
+
+  updatedPath
       .attr("stroke-dashoffset", pathLength)
       .attr("stroke-dasharray", pathLength)
       .transition(transitionPath)
       .attr("stroke-dashoffset", 0);
-  }
-  
-  function updateChart(data) {
-      const { yScale, xScale } = updateScales(data);
-      const line = createLine(xScale, yScale);
-      updateAxes(data, chart, xScale, yScale);
-      updatePath(data, line);
-  }
-  
-  updateChart(data);
-  // Update chart when button is clicked
-  d3.select("button").on("click", () => {
-    // Create new fake data
-    const newData = data.map(row => {
-      return { ...row, popularity: row.popularity * Math.random() };
-    });
-    updateChart(newData);
-  });
+}
+
+function initChart() {
+  const { yScale, xScale } = updateScales(data1, data2);
+  updateAxes(chart, xScale, yScale);
+}
+
+function updateChart() {
+  const { yScale, xScale } = updateScales(data1, data2);
+  const line = createLine(xScale, yScale);
+  updatePath(path1, data1, line);
+  updatePath(path2, data2, line);
+}
+
+// Initial setup: render the axes
+initChart();
+
+// Update chart when button is clicked
+d3.select("#knap2").on("click", () => {
+  updateChart();
+});

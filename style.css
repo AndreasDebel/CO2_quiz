@@ -9,19 +9,26 @@
     background-size: cover; /* Add this line */
 }
 #knap2 {
-    position: absolute;
-    left: 150;
-    bottom: 150;
+    position: a;
     width: 300px;
-    border: 3px solid #73AD21;
     padding: 10px;
+    color: white;
+    background-color: rgba(73, 68, 68, 0.1);
+    border: 1px solid white;
+    border-radius: 10px;
   }
 
-  #graf {
-    text-align: center;
-    margin-top: 40px;
-    background-color: rgba(73, 68, 68, 0.0) !important;
-  }
+
+  @media (max-width: 768px) {
+    #knap2 {
+        width: 200px; /* Example: Adjust width for smaller screens */
+    }
+}
+
+#knap2:hover {
+    background-color: rgba(50, 72, 49, 0.9);
+    border: 1px solid white;
+}
 
 .innermain {
     display: flex;
@@ -32,30 +39,24 @@
     width: 90vw;
     border: 5px solid rgb(232, 232, 232);
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0,8);
+    background-color: rgba(73, 68, 68, 0.5);
 }
 
 .button {
     display: block;
     width: 355px;
     height: 50px;
-    background-color: rgba(0, 0, 0, 0.01);
+    background-color: rgba(73, 68, 68, 0.3);
     color: white;
     border: 2px solid white;
 }
 
-h1 {
+h2 {
     color: white;
-    margin-bottom: 200px;
+    position: relative;
+    
 }
 
-#chart {
-    text-align: center;
-    margin-top: 40px;
-  }
-
-
-
-#innermain2 {
-    width: 200px;
+#graf {
+    background-color: rgba(217, 216, 216, 0.95);
 }
