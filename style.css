@@ -1,8 +1,8 @@
 /* Nedenstående kode låser siden, så man ikke kan scrolle selv - så SKAL man bruge knapperne */
 
-/* body, html {
+body, html {
     overflow: hidden;
-} */
+}
 
 .main {
     width: 100vw;
