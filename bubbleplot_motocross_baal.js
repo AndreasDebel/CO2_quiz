@@ -3,9 +3,9 @@ let valuesToShow = [10, 50, 100]
 let yCircle = 410
 function xCircle(i) {
     if(i == 0) {
-    return "60%"
+    return "58%"
     } else if (i == 1) {
-    return "40%"
+    return "42%"
     }
   };
 function yLabel() {
@@ -15,7 +15,7 @@ function yLabel2(i) {
     if (i == 0) {
       return yCircle - 280
     } else if (i == 1) {
-      return yCircle - 320
+      return yCircle - 280
     }
   } 
 
@@ -36,8 +36,10 @@ fetch(apiUrlGPT)
   // opdater valuesToShow med emittors
   .then((foods) => {
     valuesToShow = [];
-    valuesToShow = [(foods[11].gram_co2e_pr_unit*5*90), (foods[10].gram_co2e_pr_unit*1.5)]
-    // console.log(valuesToShow);
+    // Der bruges ca. 11.5 l benzin til én motocross-træning / 1000 for at få det i kg
+    // Der går ca. 20 kg brænde til et bål og 5 spejdere deles om bålet / 1000 for at få det i kg
+    valuesToShow = [(foods[9].gram_co2e_pr_unit*11.5/1000), (foods[8].gram_co2e_pr_unit*20/5/1000)]
+    console.log(valuesToShow);
 
     createBubbleChart();
   })
@@ -46,7 +48,7 @@ fetch(apiUrlGPT)
     console.error("Error:", error);
   });
 
-// console.log(valuesToShow)
+console.log(valuesToShow)
 
 
 // Herunder bygges bubblechartet - det er wrapped i en funktion, så den kan kaldes indeni i det scope, hvor arrayen "valuesToShow" ændres 
@@ -55,21 +57,21 @@ function createBubbleChart() {
   // append the svg object to the body of the page
   let heightGPT = 600
   let widthGPT = 800
-  let svgGPT = d3.select("#inner5")
+  let svgGPT = d3.select("#inner6")
     .append("svg")
       .attr("width", widthGPT)
       .attr("height", heightGPT)
 
   // The scale you use for bubble size
   let size = d3.scaleSqrt()
-    .domain([1, 1000])  // What's in the data, let's say it is percentage
+    .domain([1, 50])  // What's in the data, let's say it is percentage
     .range([1, 180])  // Size in pixel
 
 
   // Define the pattern
   const patternStream = svgGPT.append("defs")
   .append("pattern")
-    .attr("id", "StreamPattern")
+    .attr("id", "MotoPattern")
     .attr("patternUnits", "objectBoundingBox")
     .attr("patternContentUnits", "userSpaceOnUse")
     .attr("width", 1)
@@ -77,17 +79,17 @@ function createBubbleChart() {
 
   // Add image to the pattern
   patternStream.append("image")
-    .attr("href", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/2048px-Netflix_icon.svg.png")
+    .attr("href", "https://cdn.pixabay.com/photo/2024/03/08/19/48/ai-generated-8621506_640.jpg")
     .attr("x", 0)
     .attr("y", 0)
-    .attr("width", 280)
-    .attr("height", 280);
+    .attr("width", 95)
+    .attr("height", 95);
   
 
   // Define the pattern
   const patternAI = svgGPT.append("defs")
   .append("pattern")
-    .attr("id", "AIPattern")
+    .attr("id", "WoodPattern")
     .attr("patternUnits", "objectBoundingBox")
     .attr("patternContentUnits", "userSpaceOnUse")
     .attr("width", 1)
@@ -95,11 +97,11 @@ function createBubbleChart() {
 
   // Add image to the pattern
   patternAI.append("image")
-    .attr("href", "https://static.vecteezy.com/system/resources/thumbnails/021/059/825/small_2x/chatgpt-logo-chat-gpt-icon-on-green-background-free-vector.jpg")
+    .attr("href", "/images/dirt-bike.jpg")
     .attr("x", 0)
     .attr("y", 0)
-    .attr("width", 240)
-    .attr("height", 240);
+    .attr("width", 250)
+    .attr("height", 250);
 
   
   // (function() {console.log("hej")})();
@@ -115,16 +117,17 @@ function createBubbleChart() {
       .attr("cy", function(d){ return yCircle - size(d) } )
       .attr("r", function(d){ return size(d) })
       .style("fill", function(d, i) {
+        console.log(i); 
         if(i == 0){ 
-            return "url(#AIPattern)";
+            return "url(#WoodPattern)";
           } else if (i == 1) {
-            return "url(#StreamPattern)";
+            return "url(#MotoPattern)";
           }
       })
       .attr("stroke", "black")
       .attr("id", function(d, i) { return "bubble" + (i+1);});
 
-    svgGPT.selectAll("#bubble1")
+    svgGPT.selectAll("#bubble2")
         .raise();
 
 
@@ -154,7 +157,7 @@ function createBubbleChart() {
         // Calculate the x coordinate to center the text horizontally and subtract 4 pixels
         return (containerWidth * xPercentage / 100) - 50; })
       .attr('y', function(d){ return yLabel() } )
-      .text( function(d){ return d + " g co2e" } )
+      .text( function(d){ return d + " kg co2e" } )
       .style("font-size", 22)
       .style("font-family", "Fantasy") 
       .attr("fill", "white")
@@ -174,7 +177,7 @@ function createBubbleChart() {
           // return (containerWidth * xPercentage / 100) - 50; })
           return (containerWidth * xPercentage / 100) - 50; })
         .attr('y', function(d, i){ return yLabel2(i) } )
-        .text(function(d, i){ if (i == 0) {return "Chat med AI"} else {return "Streaming"}})
+        .text(function(d, i){ if (i == 0) {return "Motocross"} else {return "Lejrbål"}})
         .style("font-size", 22)
         .style("font-family", "Fantasy") 
         .attr("fill", "white")
