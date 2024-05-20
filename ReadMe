@@ -1,1 +1,7 @@
 Så er der lige lavet en ReadMe
+
+OBS: Man kan meget nemt låse scroll på siden inde i style.css ved at udkommentere:
+
+body, html {
+    overflow: hidden;
+}

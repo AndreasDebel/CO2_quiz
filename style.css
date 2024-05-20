@@ -1,3 +1,8 @@
+/* Nedenstående kode låser siden, så man ikke kan scrolle selv - så SKAL man bruge knapperne */
+
+/* body, html {
+    overflow: hidden;
+} */
 
 .main {
     width: 100vw;
@@ -40,6 +45,8 @@
     border: 5px solid rgb(232, 232, 232);
     border-radius: 20px;
     background-color: rgba(73, 68, 68, 0.5);
+
+    position: relative;
 }
 
 #inner2 {
@@ -71,4 +78,43 @@ h2 {
 
 #graf {
     background-color: rgba(217, 216, 216, 0.95);
+}
+
+.backbtn {
+    /* Placering */
+    position: absolute;
+    left: 50px;
+    top: 40px;
+
+    /* Udseende */
+    color: white;
+    background-color: darkgreen;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.forwardbtn {
+    /* Placering */
+    position: absolute;
+    left: 150px;
+    top: 40px;
+
+    /* Udseende */
+    color: white;
+    background-color: darkgreen;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.topbtn {
+    /* Placering */
+    position: absolute;
+    left: 250px;
+    top: 40px;
+
+    /* Udseende */
+    color: white;
+    background-color: darkgreen;
+    border-radius: 4px;
+    padding: 6px;
 }
