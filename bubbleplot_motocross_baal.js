@@ -23,7 +23,7 @@ function yLabel2(i) {
 
 
 // Specify the API endpoint for food
-const apiUrlGPT = "http://localhost:4000/emission";
+const apiUrlGPT = "https://co2-quiz-1.onrender.com/emission";
 
 // Make a GET request using the Fetch API
 fetch(apiUrlGPT)
