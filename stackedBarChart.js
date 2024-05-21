@@ -17,7 +17,6 @@ function stackedBarChart() {
     d3.csv("/klimadatabase1.csv").then(function (data) {
         // Ensure all columns are correctly read
         data.forEach(d => {
-            d.CO2e_kg = +d.CO2e_kg;
             d.Landbrug = +d.Landbrug;
             d.ILUC = +d.ILUC;
             d.Forarbejdning = +d.Forarbejdning;
@@ -27,7 +26,7 @@ function stackedBarChart() {
         });
 
         // list of value keys
-        const typeKeys = ["CO2e_kg", "Landbrug", "ILUC", "Forarbejdning", "Emballage", "Transport", "Detail"];
+        const typeKeys = ["Landbrug", "ILUC", "Forarbejdning", "Emballage", "Transport", "Detail"];
 
         // stack the data
         const stack = d3.stack()
@@ -127,22 +126,8 @@ function stackedBarChart() {
             .attr("text-anchor", "middle")
             .text("CO2 Emissions (kg)");
 
-        // set source
-        svg.append("text")
-            .attr("class", "chart-source")
-            .attr("x", -(margin.left) * 0.8)
-            .attr("y", height + margin.bottom * 0.7)
-            .attr("text-anchor", "start")
-            .text("Source: Your Data Source");
 
-        // set copyright
-        svg.append("text")
-            .attr("class", "copyright")
-            .attr("x", -(margin.left) * 0.8)
-            .attr("y", height + margin.bottom * 0.9)
-            .attr("text-anchor", "start")
-            .text("© Your Organization");
-
+     
         // set legend
         typeKeys.forEach((key, i) => {
             svg.append("rect")

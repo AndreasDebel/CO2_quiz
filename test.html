@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizzProject</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- Linket til d3 library -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+  <body>
+    <!-- Buttons til quiz scroller -->
+    <div class="main" id="main0">
+      <div class="header">
+        <button class="backbtn" onclick="scrollBack()">Forrige side</button>
+        <img class="arrowBack" src="/Images/arrow-small-left.png" alt="" />
+        <button class="forwardbtn" onclick="scrollForward()">Næste side</button>
+        <img class="arrowDown" src="/Images/arrow-small-left.png" alt="" />
+        <button class="topbtn" onclick="scrollToTop()">Til toppen</button>
+        <img class="arrowHome" src="/Images/angle-double-small-up.png" alt="" />
+      </div>
+      <div class="innermain" id="inner0">
+        <div>
+          <h1>
+            Dilemma 1 : Du er lige stået op og skal have noget morgen mad. Hvad
+            vælger du ?
+          </h1>
+        </div>
+        <div class="dilemmaImages1">
+          <img class="havregrynImg" src="Images/Havregryn.png" alt="" />
+          <img class="sandwichImg" src="Images/Sandwich.png" alt="" />
+          <img class="kaffeImg" src="Images/Kaffe.png" alt="" />
+        </div>
+        <div class="dilemmaKnapper1">
+          <button
+            id="dillema1Knap1"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Havregryn med frugt
+          </button>
+          <button
+            id="dillema1Knap2"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Kaffe og wienerbrød
+          </button>
+          <button
+            id="dillema1Knap3"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Brød med peanutbutter og advocado
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="graf1.js"></script>
+    <!-- <script src="d2Barchart.js"></script> -->
+    <script src="script.js"></script>
+    <script src="stackedBarChart.js"></script>
+    <script type="module" src="bubbleplot_GPT_Streaming.js"></script>
+    <script type="module" src="bubbleplot_motocross_baal.js"></script>
+  </body>
+</html>
