@@ -42,7 +42,7 @@ const path1 = grp
    .append("path")
   .attr("transform", `translate(${margin.left},0)`)
   .attr("fill", "none")
-  .attr("stroke", "steelblue")
+  .attr("stroke", "DodgerBlue")
   .attr("stroke-linejoin", "round")
   .attr("stroke-linecap", "round")
   .attr("stroke-width", 5);
@@ -157,11 +157,11 @@ function updateChart() {
   updatePath(path2, data2, line);
 
   // Remove existing circles
-  grp.selectAll("circle.steelblue").remove();
+  grp.selectAll("circle.DodgerBlue").remove();
   grp.selectAll("circle.red").remove();
 
   // Add new circles
-  addCircles(grp, data1, xScale, yScale, "steelblue");
+  addCircles(grp, data1, xScale, yScale, "DodgerBlue");
   addCircles(grp, data2, xScale, yScale, "red");
 }
 
