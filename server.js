@@ -22,8 +22,6 @@ app.use(cors({
     origin: '*'
     }));
 
-
-
 app.get("/foods", db.getFoods);
 app.get("/emission", db.getEmission);
 app.post("/insert-food", db.insertFood);
