@@ -1,12 +1,12 @@
-document.getElementById('option1').addEventListener('click', function() {
+document.getElementById('dillema1Knap1').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
 });
 
-document.getElementById('option2').addEventListener('click', function() {
+document.getElementById('dillema1Knap2').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
 });
 
-document.getElementById('option3').addEventListener('click', function() {
+document.getElementById('dillema1Knap3').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte mulighed 3. Her er det tilsvarende indhold.";
 });
 
