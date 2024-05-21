@@ -22,7 +22,7 @@ var data1 = [
 const svg = d3.select("#graf")
   .append("svg")
   .attr("height", 400)
-  .attr("width", 800);
+  .attr("width", 1600);
 
 const margin = { top: 0, bottom: 20, left: 40, right: 20 };
 const chart = svg.append("g")
