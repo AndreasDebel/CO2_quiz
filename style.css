@@ -86,9 +86,9 @@ align-items: center;
     margin-top: 20px;   
     width: 300px;
     padding: 10px;
-    color: rgb(100, 97, 97);
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid white;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid black;
     border-radius: 10px;
   }
   @media (max-width: 768px) {
@@ -124,7 +124,7 @@ align-items: center;
 
 
 #dillema1Knap1, #dillema1Knap2, #dillema1Knap3 {
-    color: white;
+    color: black;
     width: 10%;
     background-color: rgba(73, 68, 68, 0.1);
     border-radius: 8px;

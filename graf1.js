@@ -124,7 +124,7 @@ function addCircles(grp, data, xScale, yScale, color) {
           .transition()
           .style("opacity", 1);
         tooltip
-          .html(`tid: ${d.tid}<br>CO2e: ${d.CO2e}`)
+          .html(`${d.tid} Minutter<br>CO2e: ${d.CO2e}`)
           .style("left", `${event.pageX + 5}px`)
           .style("top", `${event.pageY - 28}px`);
       })
