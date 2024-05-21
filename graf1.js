@@ -22,7 +22,7 @@ var data1 = [
 const svg = d3.select("#graf")
   .append("svg")
   .attr("height", 400)
-  .attr("width", 1600);
+  .attr("width", 800);
 
 const margin = { top: 0, bottom: 20, left: 40, right: 20 };
 const chart = svg.append("g")
@@ -103,6 +103,48 @@ function updatePath(path, data, line) {
       .attr("stroke-dashoffset", 0);
 }
 
+function addCircles(grp, data, xScale, yScale, color) {
+  const circles = grp.selectAll(`circle.${color}`)
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("cx", d => xScale(d.tid))
+      .attr("cy", d => yScale(d.CO2e))
+      .attr("r", 0)  // Start with radius 0 for the transition
+      .attr("fill", color)
+      .attr("stroke", "black") // Add outline color
+      .attr("stroke-width", 2) // Add outline width
+      .attr("class", color)
+      .attr("transform", `translate(${margin.left},0)`)
+      .on("mouseover", function(event, d) {
+        d3.select(this)
+          .transition()
+          .attr("r", 8);
+        tooltip
+          .transition()
+          .style("opacity", 1);
+        tooltip
+          .html(`tid: ${d.tid}<br>CO2e: ${d.CO2e}`)
+          .style("left", `${event.pageX + 5}px`)
+          .style("top", `${event.pageY - 28}px`);
+      })
+      .on("mouseout", function(d) {
+        d3.select(this)
+          .transition()
+          .attr("r", 5);
+        tooltip
+          .transition()
+          .style("opacity", 0);
+      });
+
+  circles.transition()
+      .ease(d3.easeSin)
+      .duration(7000)
+      .attr("r", 5);
+
+  return circles;
+}
+
 function initChart() {
   const { yScale, xScale } = updateScales(data1, data2);
   updateAxes(chart, xScale, yScale);
@@ -113,10 +155,33 @@ function updateChart() {
   const line = createLine(xScale, yScale);
   updatePath(path1, data1, line);
   updatePath(path2, data2, line);
+
+  // Remove existing circles
+  grp.selectAll("circle.steelblue").remove();
+  grp.selectAll("circle.red").remove();
+
+  // Add new circles
+  addCircles(grp, data1, xScale, yScale, "steelblue");
+  addCircles(grp, data2, xScale, yScale, "red");
 }
 
 // Initial setup: render the axes
 initChart();
+
+// Add tooltip div
+const tooltip = d3.select("body").append("div")
+  .attr("class", "tooltip")
+  .style("position", "absolute")
+  .style("text-align", "center")
+  .style("width", "80px")
+  .style("height", "28px")
+  .style("padding", "2px")
+  .style("font", "12px sans-serif")
+  .style("background", "lightsteelblue")
+  .style("border", "0px")
+  .style("border-radius", "8px")
+  .style("pointer-events", "none")
+  .style("opacity", 0);
 
 // Update chart when button is clicked
 d3.select("#knap2").on("click", () => {
