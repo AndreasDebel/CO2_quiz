@@ -80,6 +80,23 @@ align-items: center;
     height: 50%;
 }
 
+  /* transport graf */
+#test {
+    position: relative;
+    z-index: 1;
+    left: -200px;
+    bottom: -350px;
+  }
+
+  /* transport bar */
+.bar { 
+    fill: steelblue;
+ }
+
+.axis-label { 
+    font-size: 12px; 
+}
+
 #knap2 {
     margin-top: 20px;   
     width: 300px;
