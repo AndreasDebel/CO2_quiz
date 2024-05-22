@@ -39,7 +39,6 @@ fetch(apiUrlGPT)
     // Der bruges ca. 11.5 l benzin til én motocross-træning / 1000 for at få det i kg
     // Der går ca. 20 kg brænde til et bål og 5 spejdere deles om bålet / 1000 for at få det i kg
     valuesToShow = [(foods[9].gram_co2e_pr_unit*11.5/1000), (foods[8].gram_co2e_pr_unit*20/5/1000)]
-    console.log(valuesToShow);
 
     createBubbleChart();
   })
@@ -47,9 +46,6 @@ fetch(apiUrlGPT)
   .catch((error) => {
     console.error("Error:", error);
   });
-
-console.log(valuesToShow)
-
 
 // Herunder bygges bubblechartet - det er wrapped i en funktion, så den kan kaldes indeni i det scope, hvor arrayen "valuesToShow" ændres 
 function createBubbleChart() {
@@ -117,7 +113,6 @@ function createBubbleChart() {
       .attr("cy", function(d){ return yCircle - size(d) } )
       .attr("r", function(d){ return size(d) })
       .style("fill", function(d, i) {
-        console.log(i); 
         if(i == 0){ 
             return "url(#WoodPattern)";
           } else if (i == 1) {
