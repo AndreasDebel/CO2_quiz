@@ -14,7 +14,7 @@ function stackedBarChart() {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
     // parse the Data
-    d3.csv("/klimadatabase1.csv").then(function (data) {
+    d3.csv("klimadatabase1.csv").then(function (data) {
         // Ensure all columns are correctly read
         data.forEach(d => {
             d.Landbrug = +d.Landbrug;

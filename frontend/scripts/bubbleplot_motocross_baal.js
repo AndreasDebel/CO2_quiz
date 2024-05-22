@@ -97,7 +97,7 @@ function createBubbleChart() {
 
   // Add image to the pattern
   patternAI.append("image")
-    .attr("href", "/images/dirt-bike.jpg")
+    .attr("href", "images/dirt-bike.jpg")
     .attr("x", 0)
     .attr("y", 0)
     .attr("width", 250)
