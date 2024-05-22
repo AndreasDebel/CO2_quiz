@@ -1,14 +1,24 @@
+let yourCO2emission = 0;
+let displayYourCO2emission = document.getElementById('yourEmission');
+
+
 // Det første dilemma har tre knapper, som skal ændre noget content afhængig af hvad du trykker på
 document.getElementById('dillema1Knap1').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
+    yourCO2emission = yourCO2emission + 500;
+    displayYourCO2emission.textContent = yourCO2emission + "g CO2e"
 });
 
 document.getElementById('dillema1Knap2').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
+    yourCO2emission = yourCO2emission + 200;
+    displayYourCO2emission.textContent = yourCO2emission + "g CO2e"
 });
 
 document.getElementById('dillema1Knap3').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte mulighed 3. Her er det tilsvarende indhold.";
+    yourCO2emission = yourCO2emission + 1500;
+    displayYourCO2emission.textContent = yourCO2emission + "g CO2e"
 });
 
 // Denne variable fortæller, hvilken main brugeren sidst har bevæget sig hen til m. knapperne
@@ -40,14 +50,13 @@ function scrollBack() {
 
 // Funktionen sender dig til toppen
 function scrollToTop() {
-    if(currentSection > 0) {
     let prevSection = document.getElementById('main0');
     currentSection = 0;
     console.log("currentSection er " + currentSection);
 
     prevSection.scrollIntoView({behavior: 'smooth'});
     };
-}
+
 
 // Sæt knapper ind i alle .main .header
 d3.selectAll('.main .header')
