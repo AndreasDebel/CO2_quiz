@@ -68,6 +68,7 @@ height: 100px;
 display: flex;
 justify-content: start;
 align-items: center;
+margin-left: 240px;
 }
 .arrowBack{
     rotate: 90deg;
