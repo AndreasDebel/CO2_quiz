@@ -2,6 +2,7 @@ const transportData = [
     {"transport": "EL-Cykel", "co2": 14},
     {"transport": "Tog", "co2": 28},
     {"transport": "EL-Bil", "co2": 47},
+    {"transport": "Bus", "co2": 97},
     {"transport": "Motorcykel", "co2": 113},
     {"transport": "Benzin Bil", "co2": 170},
     {"transport": "Diesel Bil", "co2": 171},
@@ -11,7 +12,7 @@ const transportData = [
   
   const chartWidth = 900;
   const chartHeight = 550;
-  const chartMargin = {top: 20, right: 50, bottom: 40, left: 60};
+  const chartMargin = {top: 20, right: 60, bottom: 40, left: 100};
   
   const chartSvg = d3.select("#test")
       .append("svg")
@@ -33,8 +34,12 @@ const transportData = [
       .attr("transform", `translate(0,${chartHeight - chartMargin.top - chartMargin.bottom})`)
       .call(d3.axisBottom(x));
   
-  chartSvg.append("g")
-      .call(d3.axisLeft(y));
+      chartSvg.append("g")
+      .call(d3.axisLeft(y))
+      .selectAll("text") // Vælg alle tekstelementer
+      .style("font-size", "15px") // Ændret størrelse til 20px
+      .style("fill", "white"); // Juster farven om nødvendigt
+  
   
   const bars = chartSvg.selectAll(".bar")
       .data(transportData)
@@ -53,12 +58,12 @@ const transportData = [
       .attr("x", d => x(d.co2) + 3) // Lille offset fra enden af baren
       .attr("dy", ".35em") // Vertikal justering for at centrere teksten i baren
       .text(d => d.co2)
-      .style("font-size", "20px")
+      .style("font-size", "30px")
       .style("fill", "white");
 
 // Første linje
 chartSvg.append("text")
-    .attr("x", (650))
+    .attr("x", (600))
     .attr("y", 40)
     .attr("text-anchor", "middle")
     .style("font-size", "35px")
@@ -68,7 +73,7 @@ chartSvg.append("text")
 
 // Anden linje
 chartSvg.append("text")
-    .attr("x", (650))
+    .attr("x", (600))
     .attr("y", 80) // Juster Y for at placere den under den første linje
     .attr("text-anchor", "middle")
     .style("font-size", "35px")
