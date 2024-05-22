@@ -55,6 +55,9 @@ function scrollToTop() {
     console.log("currentSection er " + currentSection);
 
     prevSection.scrollIntoView({behavior: 'smooth'});
+
+    yourCO2emission = 0;
+    displayYourCO2emission.textContent = "Din CO2 udledning er nulstillet"
     };
 
 
