@@ -11,8 +11,8 @@ var projection = d3.geoMercator()
 // Opret data: koordinater for start og slut
 var link = [
     { type: "LineString", coordinates: [[-80.1918, 25.7617], [10, 56]] },
-    { type: "LineString", coordinates: [[12.4964, 41.9028], [10, 56]] },
-    { type: "LineString", coordinates: [[10, -20], [10, 56]] }
+    { type: "LineString", coordinates: [[2.1686, 41.3874], [10, 56]] },
+    { type: "LineString", coordinates: [[24.9384, 60.1699], [10, 56]] }
 ];
 
 // En sti generator
