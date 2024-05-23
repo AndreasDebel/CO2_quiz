@@ -9,7 +9,7 @@ body {
 
 /* Nedenstående kode låser siden, så man ikke kan scrolle selv - så SKAL man bruge knapperne */
 
-/* body, html {
+/*body, html {
     overflow: hidden;
 } */
 
@@ -88,7 +88,6 @@ height: 100px;
 display: flex;
 justify-content: start;
 align-items: center;
-margin-left: 240px;
 }
 .arrowBack{
     rotate: 90deg;
@@ -182,7 +181,7 @@ margin-left: 240px;
     flex-direction: column;
     height: 80vh;
     width: 90vw;
-    border: 5px solid rgb(232, 232, 232);
+    border: 5px solid rgb(0, 0, 0);
     border-radius: 20px;
     background-color: rgba(73, 68, 68, 0.5);
 }
