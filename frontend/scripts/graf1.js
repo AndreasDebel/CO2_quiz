@@ -112,14 +112,12 @@ function addCircles(grp, data, xScale, yScale, color) {
       .attr("cy", d => yScale(d.CO2e))
       .attr("r", 0)  // Start with radius 0 for the transition
       .attr("fill", color)
-      .attr("stroke", "black") // Add outline color
-      .attr("stroke-width", 2) // Add outline width
       .attr("class", color)
       .attr("transform", `translate(${margin.left},0)`)
       .on("mouseover", function(event, d) {
         d3.select(this)
           .transition()
-          .attr("r", 8);
+          .attr("r", 13);
         tooltip
           .transition()
           .style("opacity", 1);
@@ -131,7 +129,7 @@ function addCircles(grp, data, xScale, yScale, color) {
       .on("mouseout", function(d) {
         d3.select(this)
           .transition()
-          .attr("r", 5);
+          .attr("r", 10);
         tooltip
           .transition()
           .style("opacity", 0);
@@ -140,7 +138,7 @@ function addCircles(grp, data, xScale, yScale, color) {
   circles.transition()
       .ease(d3.easeSin)
       .duration(7000)
-      .attr("r", 5);
+      .attr("r", 10);
 
   return circles;
 }
@@ -181,7 +179,9 @@ const tooltip = d3.select("body").append("div")
   .style("border", "0px")
   .style("border-radius", "8px")
   .style("pointer-events", "none")
-  .style("opacity", 0);
+  .style("opacity", 0)
+  .style("color", "black"); // Add this line for black text
+
 
 // Update chart when button is clicked
 d3.select("#knap2").on("click", () => {
