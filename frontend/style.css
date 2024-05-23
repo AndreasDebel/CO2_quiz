@@ -51,6 +51,9 @@ body {
     position: relative;
 }
 
+.uniqueSvg {
+    pointer-events: none;
+}
 
 .button {
     display: block;

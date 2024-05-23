@@ -8,6 +8,8 @@
   </head>
   <!-- Linket til d3 library -->
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
   <body>
     <!-- Buttons til quiz scroller -->
@@ -133,10 +135,13 @@
     
     <div class="main" id="main8">
       <div class="header">
-
       </div>
-      <div class="innermain" id="inner8"></div>
+      <div class="innermain" id="inner8">
+        <svg id="uniqueSvg" width="880" height="600"></svg>
+      </div>
     </div>
+
+
     <div class="main" id="main9">
       <div class="header">
 
@@ -163,6 +168,7 @@
     <div id="chart"></div>
 
     <script src="scripts/graf1.js"></script>
+    <script src="scripts/rejsekort.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/transport.js"></script>
     <script src="scripts/stackedBarChart.js"></script>
