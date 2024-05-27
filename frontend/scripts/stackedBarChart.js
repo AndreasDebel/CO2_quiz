@@ -126,22 +126,28 @@ function stackedBarChart() {
             .attr("text-anchor", "middle")
             .text("CO2 Emissions (kg)");
 
-
-     
         // set legend
-        typeKeys.forEach((key, i) => {
-            svg.append("rect")
-                .attr("x", -(margin.left) * 0.8 + (i * 100))
-                .attr("y", -(margin.top / 2))
-                .attr("width", 13)
-                .attr("height", 13)
-                .style("fill", color(key));
-            svg.append("text")
-                .attr("class", "legend")
-                .attr("x", -(margin.left) * 0.8 + (i * 100) + 20)
-                .attr("y", -(margin.top / 2.7))
-                .text(key);
-        });
+        const legend = svg.append("g")
+            .attr("transform", `translate(${width / 2 - (typeKeys.length / 3) * 60}, ${-margin.top / 1.5})`);
+
+        const legendItems = legend.selectAll(".legend-item")
+            .data(typeKeys)
+            .enter()
+            .append("g")
+            .attr("class", "legend-item")
+            .attr("transform", (d, i) => `translate(${(i % 3) * 120}, ${Math.floor(i / 3) * 20})`);
+
+        legendItems.append("rect")
+            .attr("width", 13)
+            .attr("height", 13)
+            .style("fill", color);
+
+        legendItems.append("text")
+            .attr("x", 20)
+            .attr("y", 10)
+            .attr("dy", "0.32em")
+            .text(d => d);
+
     }).catch(function (error) {
         console.error('Error loading or parsing data:', error);
     });
