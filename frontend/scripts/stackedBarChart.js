@@ -116,7 +116,8 @@ function stackedBarChart() {
             .attr("x", -(margin.left) * 0.9)
             .attr("y", -(margin.top) / 1.2)
             .attr("text-anchor", "start")
-            .text("CO2 Emissions by Product");
+            .text("CO2 Emissions by Product")
+            .style("fill", "white");
 
         // set X axis label
         svg.append("text")
@@ -124,7 +125,8 @@ function stackedBarChart() {
             .attr("x", width / 2)
             .attr("y", height + margin.bottom / 1.6)
             .attr("text-anchor", "middle")
-            .text("CO2 Emissions (kg)");
+            .text("CO2 Emissions (kg)")
+            .style("fill", "white");
 
         // set legend
         const legend = svg.append("g")
@@ -146,7 +148,8 @@ function stackedBarChart() {
             .attr("x", 20)
             .attr("y", 10)
             .attr("dy", "0.32em")
-            .text(d => d);
+            .text(d => d)
+            .style("fill", "white");
 
     }).catch(function (error) {
         console.error('Error loading or parsing data:', error);
