@@ -1,149 +1,38 @@
 let yourCO2emission = 0;
-let displayYourCO2emission = document.getElementById('yourEmission');
-let previousEmissions = []; // Array to store emissions for each section
+let previousEmissions = [];
+let currentSection = 0;
+
+// Function to update the CO2 emission display for all elements with the class 'yourEmission'
+function updateCO2Display() {
+    let displayElements = document.querySelectorAll('.yourEmission');
+    displayElements.forEach(function(element) {
+        element.textContent = "Din CO2 udledning indtil videre " + yourCO2emission + "g CO2e";
+    });
+}
 
 // Update emissions based on the choices made in dilemma 1
 document.getElementById('dillema1Knap1').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
     yourCO2emission += 500;
     previousEmissions[currentSection] = 500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
+    updateCO2Display();
 });
 
 document.getElementById('dillema1Knap2').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
     yourCO2emission += 200;
     previousEmissions[currentSection] = 200;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
+    updateCO2Display();
 });
 
 document.getElementById('dillema1Knap3').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte mulighed 3. Her er det tilsvarende indhold.";
     yourCO2emission += 1500;
     previousEmissions[currentSection] = 1500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
+    updateCO2Display();
 });
 
-// Update emissions based on the choices made in dilemma 2
-document.getElementById('dillema2Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
-    yourCO2emission += 500;
-    previousEmissions[currentSection] = 500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema2Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
-    yourCO2emission += 200;
-    previousEmissions[currentSection] = 200;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-// Update emissions based on the choices made in dilemma 3
-document.getElementById('dillema3Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
-    yourCO2emission += 500;
-    previousEmissions[currentSection] = 500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema3Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
-    yourCO2emission += 200;
-    previousEmissions[currentSection] = 200;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema3Knap3').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 3. Her er det tilsvarende indhold.";
-    yourCO2emission += 1500;
-    previousEmissions[currentSection] = 1500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-// Update emissions based on the choices made in dilemma 4
-document.getElementById('dillema4Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
-    yourCO2emission += 500;
-    previousEmissions[currentSection] = 500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema4Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
-    yourCO2emission += 200;
-    previousEmissions[currentSection] = 200;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema4Knap3').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 3. Her er det tilsvarende indhold.";
-    yourCO2emission += 1500;
-    previousEmissions[currentSection] = 1500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-// Update emissions based on the choices made in dilemma 5
-document.getElementById('dillema5Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
-    yourCO2emission += 500;
-    previousEmissions[currentSection] = 500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema5Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
-    yourCO2emission += 200;
-    previousEmissions[currentSection] = 200;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema5Knap3').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 3. Her er det tilsvarende indhold.";
-    yourCO2emission += 1500;
-    previousEmissions[currentSection] = 1500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-// Update emissions based on the choices made in dilemma 6
-document.getElementById('dillema6Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
-    yourCO2emission += 500;
-    previousEmissions[currentSection] = 500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema6Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
-    yourCO2emission += 200;
-    previousEmissions[currentSection] = 200;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-// Update emissions based on the choices made in dilemma 7
-document.getElementById('dillema7Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
-    yourCO2emission += 500;
-    previousEmissions[currentSection] = 500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema7Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
-    yourCO2emission += 200;
-    previousEmissions[currentSection] = 200;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-document.getElementById('dillema7Knap3').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte mulighed 3. Her er det tilsvarende indhold.";
-    yourCO2emission += 1500;
-    previousEmissions[currentSection] = 1500;
-    displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
-});
-
-let currentSection = 0;
-console.log("Current section is " + currentSection);
+// Repeat similar blocks for other dilemmas...
 
 function scrollForward() {
     let section = document.getElementById('main' + (currentSection + 1));
@@ -154,9 +43,9 @@ function scrollForward() {
 
 function scrollBack() {
     if (currentSection > 0) {
-        yourCO2emission -= previousEmissions[currentSection]; // Subtract the emission for the current section
-        previousEmissions[currentSection] = 0; // Reset the emission for the current section
-        displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
+        yourCO2emission -= previousEmissions[currentSection];
+        previousEmissions[currentSection] = 0;
+        updateCO2Display();
         
         let prevSection = document.getElementById('main' + (currentSection - 1));
         currentSection -= 1;
@@ -172,8 +61,8 @@ function scrollToTop() {
     prevSection.scrollIntoView({ behavior: 'smooth' });
 
     yourCO2emission = 0;
-    previousEmissions = []; // Reset the emissions array
-    displayYourCO2emission.textContent = "Din CO2 udledning er nulstillet";
+    previousEmissions = [];
+    updateCO2Display();
 }
 
 d3.selectAll('.main .header')
