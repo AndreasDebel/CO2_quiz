@@ -105,3 +105,4 @@ d3.selectAll('.main .header')
                     .attr('alt', '');
         }
     });
+

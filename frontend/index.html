@@ -12,13 +12,20 @@
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
   <body>
-    <!-- Buttons til quiz scroller -->
+
+    <div class="startPage">
+      <H1>Velkommen til det store Klima Spil </H1>
+    </div>
+
+
+
+
     <div class="main" id="main0">
       <div class="header">
       </div>
       <div class="innermain" id="inner0">
         <div>
-          <h1>
+          <h1 class="question">
             Dilemma 1 : Du er lige stået op og skal have noget morgen mad. Hvad
             vælger du ?
           </h1>
@@ -49,6 +56,7 @@
           </button>
         </div>
       </div>
+  
     </div>
 
     <!-- Resultatet af det første svar -->
@@ -73,18 +81,30 @@
       <div class="header">
       </div>
       <div class="innermain" id="inner2">
-        <h2>
-          En El-bil udleder mere co2 end hvad man kunne forvente. Produktionen
-          af et batteri er bla bla bla bla
-        </h2>
-        <h2>
-          En El-bil udleder mere co2 end hvad man kunne forvente. Produktionen
-          af et batteri er bla bla bla bla
-        </h2>
-
-        <div id="graf"></div>
-        <div id="graf"></div>
-        <button id="knap2">Update Chart</button>
+        <div>
+          <h1 class="question">
+            Dilemma 2 : Du har nu spist og skal have et bad. Bliver det et varmt eller koldt bad ?
+          </h1>
+        </div>
+        <div class="dilemmaImages1">
+          <img class="havregrynImg" src="Images/Havregryn.png" alt="" />
+          <img class="kaffeImg" src="Images/Kaffe.png" alt="" />
+        </div>
+        <div class="dilemmaKnapper1">
+          <button
+            id="dillema1Knap1"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Havregryn med frugt
+          </button>
+         
+          <button
+            id="dillema1Knap3"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Brød med peanutbutter og avocado
+          </button>
+        </div>
       </div>
     </div>
 
@@ -93,7 +113,18 @@
       <div class="header">
       </div>
       <div class="innermain" id="inner3">
+        <h2>
+          En El-bil udleder mere co2 end hvad man kunne forvente. Produktionen
+          af et batteri er bla bla bla bla
+        </h2>
+        <h2>
+          En El-bil udleder mere co2 end hvad man kunne forvente. Produktionen
+          af et batteri er bla bla bla bla
+        </h2>
 
+        <div id="graf"></div>
+        <div id="graf"></div>
+        <button id="knap2">Afspil grafen</button>
 
 
         <div id="graf2"></div>
@@ -104,19 +135,84 @@
     <div class="main" id="main4">
       <div class="header">
       </div>
-      <div class="innermain" id="inner4"></div>
+      <div class="innermain" id="inner4">
+        <div>
+          <h1>
+            Dilemma 3 : Det er tid til at komme på arbejde, hvilken for transport vælger du ? 
+          </h1>
+        </div>
+        <div class="dilemmaImages1">
+          <img class="havregrynImg" src="Images/Havregryn.png" alt="" />
+          <img class="sandwichImg" src="Images/Sandwich.png" alt="" />
+          <img class="kaffeImg" src="Images/Kaffe.png" alt="" />
+        </div>
+        <div class="dilemmaKnapper1">
+          <button
+            id="dillema1Knap1"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Havregryn med frugt
+          </button>
+          <button
+          id="dillema1Knap2"
+          class="dilemmaButton"
+          onclick="scrollForward()">
+          Kaffe og wienerbrød
+          </button>
+          <button
+            id="dillema1Knap3"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Brød med peanutbutter og avocado
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="main" id="main5">
       <div class="header">     
       </div>
-      <div class="innermain" id="inner5"></div>
+      <div class="innermain" id="inner5">
+        <div id="test"></div>
+
+      </div>
     </div>
 
     <div class="main" id="main6">
       <div class="header">
       </div>
-      <div class="innermain" id="inner6"></div>
+      <div class="innermain" id="inner6">
+        <div>
+          <h1 class="question">
+            På arbejdet er der frokostbuffet. Du kan spiste vegetardeller eller frikadeller af svin. Hvad snupper på din tallerken?
+          </h1>
+        </div>
+        <div class="dilemmaImages1">
+          <img class="havregrynImg" src="Images/Havregryn.png" alt="" />
+          <img class="sandwichImg" src="Images/Sandwich.png" alt="" />
+          <img class="kaffeImg" src="Images/Kaffe.png" alt="" />
+        </div>
+        <div class="dilemmaKnapper1">
+          <button
+            id="dillema1Knap1"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Havregryn med frugt
+          </button>
+          <button
+            id="dillema1Knap2"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Kaffe og wienerbrød
+          </button>
+          <button
+            id="dillema1Knap3"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Brød med peanutbutter og avocado
+          </button>
+        </div>
+      </div>
     </div>
 
 
@@ -125,7 +221,6 @@
 
       </div>
       <div class="innermain" id="inner7">
-        <div id="test"></div>
       </div>
       
     </div>
@@ -135,7 +230,36 @@
       <div class="header">
       </div>
       <div class="innermain" id="inner8">
-        <svg id="uniqueSvg" width="880" height="600"></svg>
+        <div>
+          <h1 class="question">
+            Dilemma 5 : Efter arbejde skal planlægge en ferie med familien. I er to voksne og to børn og kan tage færgen fra Aarhus til Samsø på telttur, eller I kan tage flyet til Rom. Hvad vælger du?
+          </h1>
+        </div>
+        <div class="dilemmaImages1">
+          <img class="havregrynImg" src="Images/Havregryn.png" alt="" />
+          <img class="sandwichImg" src="Images/Sandwich.png" alt="" />
+          <img class="kaffeImg" src="Images/Kaffe.png" alt="" />
+        </div>
+        <div class="dilemmaKnapper1">
+          <button
+            id="dillema1Knap1"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Miami
+          </button>
+          <button
+            id="dillema1Knap2"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Barcelona
+          </button>
+          <button
+            id="dillema1Knap3"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Helsinki
+          </button>
+        </div>
       </div>
     </div>
 
@@ -144,32 +268,184 @@
       <div class="header">
 
       </div>
-      <div class="innermain" id="inner9"></div>
+      <div class="innermain" id="inner9">
+        <svg id="uniqueSvg" width="880" height="600"></svg>
+
+      </div>
     </div>
+
+
     <div class="main" id="main10">
       <div class="header">
 
       </div>
-      <div class="innermain" id="inner10"></div>
+      <div class="innermain" id="inner10">
+        <div>
+          <h1 class="question">
+            Dilemma 6 : Når du har fået fri, vil du nyde din eftermiddag med en god hobby. Du kan gå til spejder og lave bål, eller du kan tage på motocrossbanen i 1½ time. Hvad vælger du?
+          </h1>
+        </div>
+        <div class="dilemmaImages1">
+          <img class="havregrynImg" src="Images/Havregryn.png" alt="" />
+          <img class="kaffeImg" src="Images/Kaffe.png" alt="" />
+        </div>
+        <div class="dilemmaKnapper1">
+          <button
+            id="dillema1Knap1"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Miami
+          </button>
+          <button
+            id="dillema1Knap3"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Helsinki
+          </button>
+        </div>
+      </div>
+    
     </div>
     <div class="main" id="main11">
       <div class="header">
+      </div>
+      <div class="innermain" id="inner11">
+        <div>
+          <h1 class="question">
+            Dilemma 5 : Efter arbejde skal planlægge en ferie med familien. I er to voksne og to børn og kan tage færgen fra Aarhus til Samsø på telttur, eller I kan tage flyet til Rom. Hvad vælger du?
+          </h1>
+        </div>
+        <div class="dilemmaImages1">
+          <img class="havregrynImg" src="Images/Havregryn.png" alt="" />
+          <img class="sandwichImg" src="Images/Sandwich.png" alt="" />
+          <img class="kaffeImg" src="Images/Kaffe.png" alt="" />
+        </div>
+        <div class="dilemmaKnapper1">
+          <button
+            id="dillema1Knap1"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Miami
+          </button>
+          <button
+            id="dillema1Knap2"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Barcelona
+          </button>
+          <button
+            id="dillema1Knap3"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Helsinki
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="main" id="main9">
+      <div class="header">
 
       </div>
-      <div class="innermain" id="inner11"></div>
+      <div class="innermain" id="inner9">
+        <svg id="uniqueSvg" width="880" height="600"></svg>
+
+      </div>
     </div>
+
+
+    <div class="main" id="main10">
+      <div class="header">
+
+      </div>
+      <div class="innermain" id="inner10">
+        <div>
+          <h1 class="question">
+            Dilemma 6 : Når du har fået fri, vil du nyde din eftermiddag med en god hobby. Du kan gå til spejder og lave bål, eller du kan tage på motocrossbanen i 1½ time. Hvad vælger du?
+          </h1>
+        </div>
+        <div class="dilemmaImages1">
+          <img class="havregrynImg" src="Images/Havregryn.png" alt="" />
+          <img class="kaffeImg" src="Images/Kaffe.png" alt="" />
+        </div>
+        <div class="dilemmaKnapper1">
+          <button
+            id="dillema1Knap1"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Miami
+          </button>
+          <button
+            id="dillema1Knap3"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Helsinki
+          </button>
+        </div>
+      </div>
+    </div>
+    
     <div class="main" id="main12">
       <div class="header">
       </div>
-      <div class="innermain" id="inner12"></div>
+      <div class="innermain" id="inner12">
+        <div>
+          <h1 class="question">
+            Dilemma 7 : Til aftensmad er du blevet godt lækkersulten. Du tager kæresten med i byen og sidder med menukortet. Bestiller du en rib-eye eller sushi?
+          </h1>
+        </div>
+        <div class="dilemmaImages1">
+          <img class="havregrynImg" src="Images/Havregryn.png" alt="" />
+          <img class="sandwichImg" src="Images/Sandwich.png" alt="" />
+          <img class="kaffeImg" src="Images/Kaffe.png" alt="" />
+        </div>
+        <div class="dilemmaKnapper1">
+          <button
+            id="dillema1Knap1"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Miami
+          </button>
+          <button
+            id="dillema1Knap2"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Barcelona
+          </button>
+          <button
+            id="dillema1Knap3"
+            class="dilemmaButton"
+            onclick="scrollForward()">
+            Helsinki
+          </button>
+        </div>
+      </div>
     </div>
+
+    <div class="main" id="main13">
+      <div class="header">
+      </div>
+      <div class="innermain" id="inner13"></div>
+    </div>
+
+    <div class="main" id="main14">
+      <div class="header">
+      </div>
+      <div class="innermain" id="inner14"></div>
+    </div>
+
+
+
+
+
     <div id="chart"></div>
 
     <script src="scripts/graf1.js"></script>
+    <script src="scripts/stackedBarChart.js"></script>
     <script src="scripts/rejsekort.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/transport.js"></script>
-    <script src="scripts/stackedBarChart.js"></script>
     <script type="application/javascript" src="scripts/bubbleplot_GPT_Streaming.js"></script>
     <script type="module" src="scripts/bubbleplot_motocross_baal.js"></script>
   </body>
