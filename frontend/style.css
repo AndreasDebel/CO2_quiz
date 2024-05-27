@@ -204,7 +204,7 @@ align-items: center;
     }
 .sandwichImg, .kaffeImg, .havregrynImg {
         height: 200px;
-        width: 10%;
+        width: 15%;
     
     }
 
@@ -220,8 +220,6 @@ h1 {
 
 
 .backbtn {
- 
-
     /* Udseende */
     color: white;
     background-color: rgba(35, 137, 227, 0.901);
@@ -240,15 +238,16 @@ h1 {
     border: 1px solid rgb(21, 19, 19);
     border-radius: 8px;
     font-size: larger;
-    right: 100px;
-    top: 100px;
+  
 }
 
 .topbtn {
-    color: rgb(255, 255, 255);
+    color: white;
     background-color: rgba(35, 137, 227, 0.901);
-    border: 3px solid rgb(5, 5, 5);
+    padding: 6px;
+    border: 1px solid rgb(21, 19, 19);
     border-radius: 8px;
     font-size: larger;
+   
 }
 
