@@ -102,8 +102,9 @@ body {
 width: 90%;
 height: 100px;
 display: flex;
-justify-content: start;
+justify-content: end;
 align-items: center;
+
 }
 .arrowBack{
     rotate: 90deg;

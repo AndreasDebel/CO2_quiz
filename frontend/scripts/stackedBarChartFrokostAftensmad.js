@@ -4,7 +4,7 @@ function stackedBarChart3() {
     const height = 350 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
-    const svg = d3.select("#inner7")
+    const svg = d3.select("#inner13")
         .append("svg")
         .attr("width", "100%")
         .attr("height", "100%")
@@ -14,7 +14,7 @@ function stackedBarChart3() {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
     // parse the Data
-    d3.csv("klimadatabase1.csv").then(function (data) {
+    d3.csv("klimadatabase3.csv").then(function (data) {
         // Ensure all columns are correctly read
         data.forEach(d => {
             d.Landbrug = +d.Landbrug;
@@ -153,4 +153,4 @@ function stackedBarChart3() {
     });
 }
 
-stackedBarChart2();
+stackedBarChart3();
