@@ -37,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(Images/Background2.jpg);
+    background-color: #161A30;
     background-size: cover; /* Add this line */
 
   min-height: 500px;
