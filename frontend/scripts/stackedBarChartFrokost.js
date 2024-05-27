@@ -1,10 +1,10 @@
-function stackedBarChart() {
+function stackedBarChart2() {
     const margin = { top: 80, right: 20, bottom: 50, left: 120 };
     const width = 450 - margin.left - margin.right;
     const height = 350 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
-    const svg = d3.select("#inner1")
+    const svg = d3.select("#inner7")
         .append("svg")
         .attr("width", "100%")
         .attr("height", "100%")
@@ -153,4 +153,4 @@ function stackedBarChart() {
     });
 }
 
-stackedBarChart();
+stackedBarChart2();
