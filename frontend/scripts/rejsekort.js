@@ -1,27 +1,27 @@
-//Vælg SVG-elementet med den unikke id
+// Select the SVG element and set dimensions
 var uniqueSvg = d3.select("#uniqueSvg"),
-uniqueWidth = +uniqueSvg.attr("width"),
-uniqueHeight = +uniqueSvg.attr("height");
+    uniqueWidth = +uniqueSvg.attr("width"),
+    uniqueHeight = +uniqueSvg.attr("height");
 
-// Kort og projektion
+// Create the projection
 var projection = d3.geoMercator()
     .scale(180)
     .translate([uniqueWidth / 2, uniqueHeight / 2 * 1.3]);
 
-// Opret data: koordinater for start og slut
+// Create data for the links
 var link = [
-    { type: "LineString", coordinates: [[-80.1918, 25.7617], [10, 56]] },
-    { type: "LineString", coordinates: [[2.1686, 41.3874], [10, 56]] },
-    { type: "LineString", coordinates: [[24.9384, 60.1699], [10, 56]] }
+    { type: "LineString", coordinates: [[-80.1918, 25.7617], [10, 56]], fact: "Link from Miami to a point in the north." },
+    { type: "LineString", coordinates: [[2.1686, 41.3874], [10, 56]], fact: "Link from Barcelona to a point in the north." },
+    { type: "LineString", coordinates: [[24.9384, 60.1699], [10, 56]], fact: "Link from Helsinki to a point in the north." }
 ];
 
-// En sti generator
+// Create the path generator
 var path = d3.geoPath()
     .projection(projection);
 
-// Hent verdensform
+// Load and draw the world map
 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(data) {
-    // Tegn kortet
+    // Draw the map
     uniqueSvg.append("g")
         .selectAll("path")
         .data(data.features)
@@ -31,7 +31,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
         .style("stroke", "#fff")
         .style("stroke-width", 0);
 
-    // Tilføj stien
+    // Add the paths
     uniqueSvg.selectAll("myPath")
         .data(link)
         .enter()
@@ -39,7 +39,18 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
         .attr("d", function(d) { return path(d); })
         .style("fill", "none")
         .style("stroke", "orange")
-        .style("stroke-width", 3);
+        .style("stroke-width", 3)
+        .on("mouseover", function(event, d) {
+            // Show the fact box and set its content
+            d3.select("#factBox")
+                .style("visibility", "visible")
+                .html("<strong>Fact:</strong> " + d.fact);
+        })
+        .on("mouseout", function() {
+            // Hide the fact box
+            d3.select("#factBox")
+                .style("visibility", "hidden");
+        });
 
 }).catch(function(error) {
     console.log(error);
