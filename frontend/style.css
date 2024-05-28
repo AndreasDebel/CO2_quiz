@@ -63,7 +63,7 @@ body {
 
 #inner2 {
     display: flex;
-    flex-direction: row-;
+    flex-direction: row-reverse;
     justify-content: flex-start;
 
 }
