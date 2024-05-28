@@ -74,12 +74,12 @@ body {
 }
 
 #factBox { 
-    position: absolute;
+    position: relative;
     visibility: hidden;
     background-color: white;
     border: 1px solid #ccc;
     padding: 10px;
-    left: 10px;
+    left: -700px;
     top: 10px;
     width: 200px;
     z-index: 100;
