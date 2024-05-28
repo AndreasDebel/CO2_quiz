@@ -10,7 +10,7 @@ function stackedBarChart() {
       .attr("height", "100%")
       .attr("viewBox", "0 0 450 350")
       .attr("preserveAspectRatio", "xMinYMin")
-      .attr("id", "uniqueSVG") // unique ID for the SVG
+      .attr("id", "unique2SVG") // unique ID for the SVG
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
