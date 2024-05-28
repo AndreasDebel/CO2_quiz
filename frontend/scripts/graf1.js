@@ -101,7 +101,7 @@ function updateAxes(chart, xScale, yScale) {
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .style("fill", "white")
-      .text("CO2e");
+      .text("CO2/g");
 }
 
 function updatePath(path, data, line) {
@@ -141,7 +141,7 @@ function addCircles(grp, data, xScale, yScale, color) {
           .transition()
           .style("opacity", 1);
         tooltip
-          .html(`${d.tid} Minutter<br>CO2e: ${d.CO2e}`)
+          .html(`${d.tid} Minutter<br>${d.CO2e} CO2/g`)
           .style("left", `${event.pageX + 5}px`)
           .style("top", `${event.pageY - 28}px`);
       })
