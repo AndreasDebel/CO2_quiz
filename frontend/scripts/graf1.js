@@ -87,7 +87,7 @@ function updateAxes(chart, xScale, yScale) {
   // Add x-axis label
   chart.append("text")
       .attr("class", "x-axis-label")
-      .attr("transform", `translate(${width / 2},${height + margin.bottom - 10})`)
+      .attr("transform", `translate(${width / 2},${height + margin.bottom - 8})`)
       .style("text-anchor", "middle")
       .style("fill", "white")
       .text("Minutter");
@@ -143,7 +143,7 @@ function addCircles(grp, data, xScale, yScale, color) {
         tooltip
           .html(`${d.tid} Minutter<br>CO2e: ${d.CO2e}`)
           .style("left", `${event.pageX + 5}px`)
-          .style("top", `${event.pageY - 28}px`);
+          .style("top", `${event.pageY - 30}px`);
       })
       .on("mouseout", function(d) {
         d3.select(this)
