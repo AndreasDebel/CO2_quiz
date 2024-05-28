@@ -24,7 +24,7 @@ const svg = d3.select("#graf")
   .attr("height", 400)
   .attr("width", 800);
 
-const margin = { top: 0, bottom: 20, left: 40, right: 20 };
+const margin = { top: 0, bottom: 40, left: 60, right: 20 }; // Adjust bottom and left margin for axis labels
 const chart = svg.append("g")
   .attr("transform", `translate(${margin.left},0)`);
 
@@ -83,6 +83,25 @@ function updateAxes(chart, xScale, yScale) {
   chart.select(".y-axis")
       .attr("transform", `translate(0, 0)`)
       .call(d3.axisLeft(yScale).ticks(10));
+  
+  // Add x-axis label
+  chart.append("text")
+      .attr("class", "x-axis-label")
+      .attr("transform", `translate(${width / 2},${height + margin.bottom - 10})`)
+      .style("text-anchor", "middle")
+      .style("fill", "white")
+      .text("Minutter");
+
+  // Add y-axis label
+  chart.append("text")
+      .attr("class", "y-axis-label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 2)
+      .attr("x", -height / 2)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .style("fill", "white")
+      .text("CO2e");
 }
 
 function updatePath(path, data, line) {
@@ -181,7 +200,6 @@ const tooltip = d3.select("body").append("div")
   .style("pointer-events", "none")
   .style("opacity", 0)
   .style("color", "black"); // Add this line for black text
-
 
 // Update chart when button is clicked
 d3.select("#updateChartBtn").on("click", () => {
