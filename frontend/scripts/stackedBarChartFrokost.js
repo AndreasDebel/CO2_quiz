@@ -5,7 +5,7 @@ function stackedBarChart2() {
 
   // append the svg object to the body of the page
   const svg = d3
-    .select("#inner7")
+    .select("#inner8")
     .append("svg")
     .attr("width", "100%")
     .attr("height", "100%")

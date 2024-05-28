@@ -9,7 +9,7 @@ const dataset = [
 ];
 
 //Create SVG element with width and height based on w and h variables
-const svg = d3.select("#innermain2").append("svg").attr("width", w).attr("height", h);
+const svg = d3.select("#innermain3").append("svg").attr("width", w).attr("height", h);
 
 //Create bars based on data and append to svg
 // 1st:

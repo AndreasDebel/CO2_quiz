@@ -4,7 +4,7 @@ function stackedBarChart3() {
     const height = 350 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
-    const svg = d3.select("#inner13")
+    const svg = d3.select("#inner14")
         .append("svg")
         .attr("width", "100%")
         .attr("height", "100%")

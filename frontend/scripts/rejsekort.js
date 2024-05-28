@@ -11,7 +11,7 @@ var projection = d3.geoMercator()
 // Create data for the links
 var link = [
     { type: "LineString", coordinates: [[-80.1918, 25.7617], [10, 56]], rejsested: "København til Miami", fact: "10 timer og 20 minutter.", co2: "1930 kg"},
-    { type: "LineString", coordinates: [[2.1686, 41.3874], [10, 56]], rejsested: "København til", fact: "10 timer og 20 minutter.", co2: ""},
+    { type: "LineString", coordinates: [[2.1686, 41.3874], [10, 56]], rejsested: "København til Barcelona", fact: "10 timer og 20 minutter.", co2: ""},
     { type: "LineString", coordinates: [[24.9384, 60.1699], [10, 56]], rejsested: "København til Helsinki", fact: "10 timer og 20 minutter.", co2: ""}
 ];
 
