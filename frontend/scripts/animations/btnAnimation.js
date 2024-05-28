@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const animatedElements = document.querySelectorAll('.sandwichImg');
+    const animatedElements = document.querySelectorAll('.sandwichImg, .sandwichImg, .kaffeImg, .havregrynImg, .coldShowerImg, .hotShowerImg');
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }, {
-        threshold: 0.1
+        threshold: 1
     });
 
     animatedElements.forEach(element => {
