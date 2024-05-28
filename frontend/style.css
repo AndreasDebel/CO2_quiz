@@ -175,6 +175,20 @@ align-items: center;
     
     }
 
+    .sandwichImg{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .sandwichImg.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+
+
+    
 h1 {
     color: white;
     position: relative;
