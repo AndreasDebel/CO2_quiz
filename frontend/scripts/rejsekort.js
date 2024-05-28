@@ -41,10 +41,13 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
         .style("stroke", "#2389e3e6")
         .style("stroke-width", 5)
         .on("mouseover", function(event, d) {
-            // Show the fact box and set its content
-            d3.select("#factBox")
-                .style("visibility", "visible")
-                .html("<div><strong>" + d.rejsested + "</strong><br><strong>Rejsetid:</strong> " + d.fact + "<br><strong>CO2-udledning:</strong> " + d.co2 + "</div>");
+// Show the fact box and set its content
+d3.select("#factBox")
+    .style("visibility", "visible")
+    .style("top", (event.pageY + 10) + "px")  // Adjust 10px as needed
+    .style("left", (event.pageX + 10) + "px") // Adjust 10px as needed
+    .html("<div><strong>" + d.rejsested + "</strong><br><strong>Rejsetid:</strong> " + d.fact + "<br><strong>CO2-udledning:</strong> " + d.co2 + "</div>");
+
         })
         .on("mouseout", function() {
             // Hide the fact box
