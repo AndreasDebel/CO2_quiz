@@ -35,10 +35,12 @@ document.getElementById('dillema1Knap3').addEventListener('click', function() {
 // Repeat similar blocks for other dilemmas...
 
 function scrollForward() {
-    let section = document.getElementById('main' + (currentSection + 1));
-    currentSection += 1;
-    console.log("currentSection er " + currentSection);
-    section.scrollIntoView({ behavior: 'smooth' });
+    let nextSection = document.getElementById('main' + (currentSection + 1));
+    if (nextSection) { // Check if next section exists
+        currentSection += 1;
+        console.log("currentSection er " + currentSection);
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function scrollBack() {
