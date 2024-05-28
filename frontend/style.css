@@ -42,16 +42,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #162530;
+    background-color: #1d435f;
     background-size: cover; /* Add this line */
 
   min-height: 500px;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 
 
 
@@ -133,36 +127,9 @@ align-items: center;
 }
 
 
-#knap2 {
-    margin-top: 20px;   
-    width: 300px;
-    padding: 10px;
-    color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 2px solid black;
-    border-radius: 10px;
-  }
-  @media (max-width: 768px) {
-    #knap2 {
-        width: 200px; /* Example: Adjust width for smaller screens */
-    }
-}
-#knap2:hover {
-    background-color:rgba(50, 72, 49, 0.9);
-    border: 1px solid white;
-}
 
 
 
-
-/* Dilemma 1 uniqe styling */
-
-
-#inner0 {
-    
-   display: flex;
-   
-}
 
 
 .dilemmaKnapper1 {
@@ -202,21 +169,33 @@ align-items: center;
         width: 100%;
         height: 200px;
     }
-.sandwichImg, .kaffeImg, .havregrynImg {
+.sandwichImg, .kaffeImg, .havregrynImg, .coldShowerImg, .hotShowerImg {
         height: 200px;
         width: 15%;
     
     }
-
-
-
-
 
 h1 {
     color: white;
     position: relative;
     
 }
+
+#updateChartBtn{
+    color: rgb(217, 209, 209);
+    width: 30%;
+    height: 10%;
+    background-color: rgba(35, 137, 227, 0.901);
+    border-radius: 5px;
+    font-size: larger;
+    border: 1px solid rgb(16, 15, 15);
+    transition: 1s;
+    cursor: pointer;
+    overflow: hidden;
+
+
+}
+
 
 
 .backbtn {
@@ -243,7 +222,7 @@ h1 {
 
 .topbtn {
     color: white;
-    background-color: rgba(35, 137, 227, 0.901);
+    background-color: #2389e3e6;
     padding: 6px;
     border: 1px solid rgb(21, 19, 19);
     border-radius: 8px;

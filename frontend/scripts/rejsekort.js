@@ -19,6 +19,8 @@ var link = [
 var path = d3.geoPath()
     .projection(projection);
 
+
+
 // Load and draw the world map
 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(data) {
     // Draw the map
@@ -26,7 +28,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
         .selectAll("path")
         .data(data.features)
         .enter().append("path")
-        .attr("fill", "#b8b8b8")
+        .attr("fill", "white")
         .attr("d", d3.geoPath().projection(projection))
         .style("stroke", "#fff")
         .style("stroke-width", 0);
@@ -38,8 +40,8 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
         .append("path")
         .attr("d", function(d) { return path(d); })
         .style("fill", "none")
-        .style("stroke", "orange")
-        .style("stroke-width", 3)
+        .style("stroke", "#2389e3e6")
+        .style("stroke-width", 5)
         .on("mouseover", function(event, d) {
             // Show the fact box and set its content
             d3.select("#factBox")

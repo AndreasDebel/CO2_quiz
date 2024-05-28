@@ -75,7 +75,7 @@ function createBubbleChart() {
 
   // Add image to the pattern
   patternStream.append("image")
-    .attr("href", "https://cdn.pixabay.com/photo/2024/03/08/19/48/ai-generated-8621506_640.jpg")
+    .attr("href", "Images/Bonfire.png")
     .attr("x", 0)
     .attr("y", 0)
     .attr("width", 95)
@@ -93,7 +93,7 @@ function createBubbleChart() {
 
   // Add image to the pattern
   patternAI.append("image")
-    .attr("href", "Images/dirt-bike.jpg")
+    .attr("href", "Images/Motorcross.png")
     .attr("x", 0)
     .attr("y", 0)
     .attr("width", 250)
@@ -119,7 +119,7 @@ function createBubbleChart() {
             return "url(#MotoPattern)";
           }
       })
-      .attr("stroke", "black")
+      .attr("stroke", "white")
       .attr("id", function(d, i) { return "bubble" + (i+1);});
 
     svgGPT.selectAll("#bubble2")

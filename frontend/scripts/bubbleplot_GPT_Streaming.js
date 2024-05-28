@@ -77,7 +77,7 @@ function createBubbleChart() {
 
   // Add image to the pattern
   patternStream.append("image")
-    .attr("href", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Netflix_icon.svg/2048px-Netflix_icon.svg.png")
+    .attr("href", "Images/netflixIco.png")
     .attr("x", 0)
     .attr("y", 0)
     .attr("width", 280)
@@ -95,9 +95,8 @@ function createBubbleChart() {
 
   // Add image to the pattern
   patternAI.append("image")
-    .attr("href", "https://static.vecteezy.com/system/resources/thumbnails/021/059/825/small_2x/chatgpt-logo-chat-gpt-icon-on-green-background-free-vector.jpg")
-    .attr("x", 0)
-    .attr("y", 0)
+    .attr("href", "Images/chatgptIcon.png")
+  
     .attr("width", 240)
     .attr("height", 240);
 
@@ -121,7 +120,7 @@ function createBubbleChart() {
             return "url(#StreamPattern)";
           }
       })
-      .attr("stroke", "black")
+      .attr("stroke", "white")
       .attr("id", function(d, i) { return "bubble" + (i+1);});
 
     svgGPT.selectAll("#bubble1")

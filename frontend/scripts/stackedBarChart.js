@@ -130,26 +130,27 @@ function stackedBarChart() {
 
         // set legend
         const legend = svg.append("g")
-            .attr("transform", `translate(${width / 2 - (typeKeys.length / 3) * 60}, ${-margin.top / 1.5})`);
+            .attr("transform", `translate(${width / 2 - (typeKeys.length / 3) * 77}, ${-margin.top / 2})`);
 
         const legendItems = legend.selectAll(".legend-item")
             .data(typeKeys)
             .enter()
             .append("g")
             .attr("class", "legend-item")
-            .attr("transform", (d, i) => `translate(${(i % 3) * 120}, ${Math.floor(i / 3) * 20})`);
+            .attr("transform", (d, i) => `translate(${(i % 3) * 100}, ${Math.floor(i / 3) * 20})`);
 
         legendItems.append("rect")
-            .attr("width", 13)
-            .attr("height", 13)
+            .attr("width", 10)
+            .attr("height", 10)
             .style("fill", color);
 
         legendItems.append("text")
             .attr("x", 20)
-            .attr("y", 10)
+            .attr("y", 5)
             .attr("dy", "0.32em")
             .text(d => d)
-            .style("fill", "white");
+            .style("fill", "white")
+            .style("font-size", "12px");
 
     }).catch(function (error) {
         console.error('Error loading or parsing data:', error);

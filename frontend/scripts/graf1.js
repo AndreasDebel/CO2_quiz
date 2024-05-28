@@ -184,6 +184,6 @@ const tooltip = d3.select("body").append("div")
 
 
 // Update chart when button is clicked
-d3.select("#knap2").on("click", () => {
+d3.select("#updateChartBtn").on("click", () => {
   updateChart();
 });
