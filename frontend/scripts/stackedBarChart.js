@@ -10,6 +10,7 @@ function stackedBarChart() {
         .attr("height", "100%")
         .attr("viewBox", "0 0 450 350")
         .attr("preserveAspectRatio", "xMinYMin")
+        .attr("id", "uniqueSVG") // unique ID for the SVG
         .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
@@ -69,28 +70,32 @@ function stackedBarChart() {
         // create a tooltip
         const tooltip = d3.select("body")
             .append("div")
-            .attr("id", "chart")
-            .attr("class", "tooltip");
+            .attr("id", "uniqueTooltip") // unique ID for the tooltip
+            .attr("class", "tooltip")
+            .style("position", "absolute")
+            .style("opacity", 0)
+            .style("background-color", "white")
+            .style("border", "solid 1px")
+            .style("border-radius", "5px")
+            .style("padding", "10px")
+            .style("pointer-events", "none")
+            .style("color", "black"); // Ensuring the text color is visible
 
         // tooltip events
-        const mouseover = function (d) {
-            tooltip
-                .style("opacity", .8);
-            d3.select(this)
-                .style("opacity", .5);
+        const mouseover = function () {
+            tooltip.style("opacity", .8);
+            d3.select(this).style("opacity", .5);
         };
         const mousemove = function (event, d) {
             const formater = d3.format(",");
             tooltip
-                .html(formater(d[1]))
-                .style("top", event.pageY - 10 + "px")
-                .style("left", event.pageX + 10 + "px");
+                .html(`Value: ${formater(d[1] - d[0])}`) // Adjusted to show the segment value
+                .style("top", (event.pageY - 30) + "px")
+                .style("left", (event.pageX + 10) + "px");
         };
-        const mouseleave = function (d) {
-            tooltip
-                .style("opacity", 0);
-            d3.select(this)
-                .style("opacity", 1);
+        const mouseleave = function () {
+            tooltip.style("opacity", 0);
+            d3.select(this).style("opacity", 1);
         };
 
         // create bars
