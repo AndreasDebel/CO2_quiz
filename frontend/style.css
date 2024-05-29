@@ -12,6 +12,21 @@ body {
 }
 
 
+/* Nedenstående kode er til at farve diverne på siden */
+#main, #main3, #main6, #main9, #main12, #main15  {
+    background-color: rgba(43, 95, 141, 0.652);
+ }
+
+#main1, #main4, #main7, #main10, #main13, #main16 {
+    background-color: rgba(30, 76, 116, 0.901);
+}
+
+#main2, #main5, #main8, #main11, #main14, #main17 {
+    background-color: rgba(45, 107, 161, 0.719);
+}
+
+
+
 /* Nedenstående kode låser siden, så man ikke kan scrolle selv - så SKAL man bruge knapperne */
 
 /*body, html {
@@ -62,13 +77,9 @@ body {
  }
 
  #main2, #main8, #main14{
-    background-color: rgba(30, 76, 116, 0.901);
     padding-top: 5%;
  }
  
- #main3{
-    background-color: rgba(43, 95, 141, 0.652);
- }
 
 
 .dynamicContent8 {
