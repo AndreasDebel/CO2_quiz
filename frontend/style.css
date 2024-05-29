@@ -45,7 +45,7 @@ body {
     background-color: #1d435f;
     background-size: cover; /* Add this line */
 
-  min-height: 500px;
+  /* min-height: 500px; */
 
 
 
@@ -76,7 +76,7 @@ body {
 
 
 .dynamicContent8 {
-    max-width: 100px;
+    max-width: 500px;
 
 }
 
