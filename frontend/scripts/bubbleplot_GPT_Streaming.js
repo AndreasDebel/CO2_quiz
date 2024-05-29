@@ -155,7 +155,7 @@ function createBubbleChart() {
       .attr('y', function(d){ return yLabel() } )
       .text( function(d){ return d + " g co2e" } )
       .style("font-size", 22)
-      .style("font-family", "Fantasy") 
+      .style("font-family", "Open Sans") 
       .attr("fill", "white")
       .attr('alignment-baseline', 'middle');
 
