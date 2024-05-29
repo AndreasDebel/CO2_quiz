@@ -77,6 +77,13 @@ body {
 a {
     color: white;
 }
+
+.textForMap {
+  position: relative;
+  bottom: 20%;
+  left: -20%;
+}
+
 .uniqueSvg {
     pointer-events: none;
 }
