@@ -36,7 +36,7 @@ fetch(apiUrlGPT)
   // opdater valuesToShow med emittors
   .then((foods) => {
     valuesToShow = [];
-    valuesToShow = [(foods[11].gram_co2e_pr_unit*5*90), (foods[10].gram_co2e_pr_unit*1.5)]
+    valuesToShow = [(foods[11].gram_co2e_pr_unit*5*90/2), (foods[10].gram_co2e_pr_unit*1.5)]
     // console.log(valuesToShow);
 
     createBubbleChart();
