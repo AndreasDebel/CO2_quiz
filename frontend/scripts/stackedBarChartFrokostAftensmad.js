@@ -2,7 +2,7 @@ function stackedBarChart() {
     const margin = { top: 80, right: 20, bottom: 50, left: 120 };
     const width = 450 - margin.left - margin.right;
     const height = 350 - margin.top - margin.bottom;
-  
+
     // append the svg object to the body of the page
     const svg = d3.select("#inner14")
         .append("svg")
@@ -10,10 +10,10 @@ function stackedBarChart() {
         .attr("height", "100%")
         .attr("viewBox", "0 0 450 350")
         .attr("preserveAspectRatio", "xMinYMin")
-        .attr("id", "unique3SVG") // unique ID for the SVG
+        .attr("id", "unique1SVG") // unique ID for the SVG
         .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
-  
+
     // parse the Data
     d3.csv("klimadatabase3.csv").then(function (data) {
         // Ensure all columns are correctly read
@@ -25,17 +25,17 @@ function stackedBarChart() {
             d.Transport = +d.Transport;
             d.Detail = +d.Detail;
         });
-  
+
         // list of value keys
         const typeKeys = ["Landbrug", "ILUC", "Forarbejdning", "Emballage", "Transport", "Detail"];
-  
+
         // stack the data
         const stack = d3.stack()
             .keys(typeKeys)
             .order(d3.stackOrderNone)
             .offset(d3.stackOffsetNone);
         const stackedData = stack(data);
-  
+
         // X scale and Axis
         const formater = d3.format(".1s");
         const xScale = d3.scaleLinear()
@@ -45,7 +45,7 @@ function stackedBarChart() {
             .attr("transform", `translate(0, ${height})`)
             .call(d3.axisBottom(xScale).ticks(7).tickSize(0).tickPadding(6).tickFormat(formater));
         xAxis.select(".domain").remove();
-  
+
         // Y scale and Axis
         const yScale = d3.scaleBand()
             .domain(data.map(d => d.Produkt))
@@ -53,12 +53,12 @@ function stackedBarChart() {
             .padding(.2);
         svg.append('g')
             .call(d3.axisLeft(yScale).tickSize(0).tickPadding(8));
-  
+
         // color palette
         const color = d3.scaleOrdinal()
             .domain(typeKeys)
-            .range(['#0072BC', '#18375F', '#EF4A60', '#984ea3', '#ff7f00', '#ffff33', '#a65628']);
-  
+            .range(['#87d7ff', '#52adf7', '#0072BC', '#3f5c9e', '#191c70', '#18375F', '#87d7ff']);
+
         // set horizontal grid line
         svg.append("g")
             .attr("class", "grid")
@@ -66,7 +66,7 @@ function stackedBarChart() {
                 .tickSize(-width)
                 .tickFormat("")
                 .tickValues(yScale.domain().filter((d, i) => !(i % 1)))); // Ensuring grid lines for each band
-  
+
         // create a tooltip
         const tooltip = d3.select("body")
             .append("div")
@@ -80,7 +80,7 @@ function stackedBarChart() {
             .style("padding", "10px")
             .style("pointer-events", "none")
             .style("color", "black"); // Ensuring the text color is visible
-  
+
         // tooltip events
         const mouseover = function () {
             tooltip.style("opacity", .8);
@@ -97,7 +97,7 @@ function stackedBarChart() {
             tooltip.style("opacity", 0);
             d3.select(this).style("opacity", 1);
         };
-  
+
         // create bars
         svg.append("g")
             .selectAll("g")
@@ -114,7 +114,7 @@ function stackedBarChart() {
             .on("mouseover", mouseover)
             .on("mousemove", mousemove)
             .on("mouseleave", mouseleave);
-  
+
         // set title
         svg.append("text")
             .attr("class", "chart-title")
@@ -123,7 +123,7 @@ function stackedBarChart() {
             .attr("text-anchor", "start")
             .text("CO2 Emissions by Product")
             .style("fill", "white");
-  
+
         // set X axis label
         svg.append("text")
             .attr("class", "chart-label")
@@ -132,23 +132,23 @@ function stackedBarChart() {
             .attr("text-anchor", "middle")
             .text("CO2 Emissions (kg)")
             .style("fill", "white");
-  
+
         // set legend
         const legend = svg.append("g")
             .attr("transform", `translate(${width / 2 - (typeKeys.length / 3) * 77}, ${-margin.top / 2})`);
-  
+
         const legendItems = legend.selectAll(".legend-item")
             .data(typeKeys)
             .enter()
             .append("g")
             .attr("class", "legend-item")
             .attr("transform", (d, i) => `translate(${(i % 3) * 100}, ${Math.floor(i / 3) * 20})`);
-  
+
         legendItems.append("rect")
             .attr("width", 10)
             .attr("height", 10)
             .style("fill", color);
-  
+
         legendItems.append("text")
             .attr("x", 20)
             .attr("y", 5)
@@ -156,10 +156,10 @@ function stackedBarChart() {
             .text(d => d)
             .style("fill", "white")
             .style("font-size", "12px");
-  
+
     }).catch(function (error) {
         console.error('Error loading or parsing data:', error);
     });
-  }
-  
-  stackedBarChart();
+}
+
+stackedBarChart();

@@ -67,8 +67,16 @@ body {
     justify-content: flex-start;
 
 }
-
-
+.textContainer {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    margin-bottom: 14%;
+    font-size: larger;
+}
+a {
+    color: white;
+}
 .uniqueSvg {
     pointer-events: none;
 }

@@ -57,7 +57,7 @@ function stackedBarChart() {
         // color palette
         const color = d3.scaleOrdinal()
             .domain(typeKeys)
-            .range(['#0072BC', '#18375F', '#EF4A60', '#984ea3', '#ff7f00', '#ffff33', '#5c94ed']);
+            .range(['#87d7ff', '#52adf7', '#0072BC', '#3f5c9e', '#191c70', '#18375F', '#87d7ff']);
 
         // set horizontal grid line
         svg.append("g")
