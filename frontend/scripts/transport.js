@@ -10,7 +10,7 @@ const transportData = [
     {"transport": "Krydstogtskib", "co2": 250}
   ];
   
-  const chartWidth = 900;
+  const chartWidth = 700;
   const chartHeight = 550;
   const chartMargin = {top: 20, right: 60, bottom: 40, left: 100};
   

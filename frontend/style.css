@@ -65,11 +65,13 @@ body {
     display: flex;
     flex-direction: row-reverse;
 
+
 }
- #inner16, #innner12{
+#inner4, #inner6, #inner12, #inner16 {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row-reverse;
+    /* gap: 0px; */
  }
 
 
@@ -123,8 +125,8 @@ p {
   #test {
     position: relative;
     z-index: 1;
-    left: -200px;
-    bottom: -100px;
+    left: 0px;
+    bottom: 0px;
   }
 
   /* transport bar */
@@ -204,7 +206,15 @@ align-items: center;
 
 
 
-
+.dynamicContent8 {
+    font-size: 20px;
+    width: 600px;
+    padding: 30px;
+    border: 1px solid #ffffffe6;
+    overflow-wrap: break-word;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    border-radius: 10px;
+}
 
 
 
