@@ -73,6 +73,11 @@ body {
  }
 
 
+.dynamicContent8 {
+    max-width: 100px;
+
+}
+
 .textContainer {
     display: flex;
     justify-content: start;
