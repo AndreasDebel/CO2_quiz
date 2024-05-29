@@ -63,20 +63,11 @@ const transportData = [
 
 // Første linje
 chartSvg.append("text")
-    .attr("x", (600))
-    .attr("y", 40)
+    .attr("x", (160))
+    .attr("y", -5)
     .attr("text-anchor", "middle")
-    .style("font-size", "35px")
+    .style("font-size", "20px")
     .style("font-weight", "bold")
     .style("fill", "white")
-    .text("Gram CO₂-udledning");
+    .text("Gram CO₂-udledning pr. kilometer");
 
-// Anden linje
-chartSvg.append("text")
-    .attr("x", (600))
-    .attr("y", 80) // Juster Y for at placere den under den første linje
-    .attr("text-anchor", "middle")
-    .style("font-size", "35px")
-    .style("font-weight", "bold")
-    .style("fill", "white")
-    .text("pr. kilometer");
