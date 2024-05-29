@@ -147,20 +147,6 @@ align-items: center;
 }
 
 
-.dilemmaButton {
-    color: rgb(217, 209, 209);
-    width: 20%;
-    height: 80%;
-    background-color: rgba(35, 137, 227, 0.901);
-    border-radius: 5px;
-    font-size: larger;
-    border: 1px solid rgb(16, 15, 15);
-    transition: 1s;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-
-}
   
 .dilemmaButton:hover {
     background-color: rgba(43, 38, 38, 0.9);
@@ -180,7 +166,7 @@ align-items: center;
         width: 15%;
     
     }
-
+    
     .sandwichImg, .kaffeImg, .havregrynImg, .coldShowerImg, .hotShowerImg{
         opacity: 0;
         transition: opacity 2s ease, transform 2s ease;
@@ -193,28 +179,51 @@ align-items: center;
 
 
 
-    
-h1 {
-    color: white;
-    position: relative;
-    
-}
 
-#updateChartBtn{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Nedenstående kode er til knapperne */
+
+
+
+
+.dilemmaButton {
     color: rgb(217, 209, 209);
-    width: 30%;
-    height: 10%;
+    width: 20%;
+    height: 80%;
     background-color: rgba(35, 137, 227, 0.901);
     border-radius: 5px;
     font-size: larger;
     border: 1px solid rgb(16, 15, 15);
     transition: 1s;
+    position: relative;
     cursor: pointer;
     overflow: hidden;
 
-
 }
-
 
 
 .backbtn {
@@ -249,3 +258,17 @@ h1 {
    
 }
 
+#updateChartBtn{
+    color: rgb(217, 209, 209);
+    width: 30%;
+    height: 10%;
+    background-color: rgba(35, 137, 227, 0.901);
+    border-radius: 5px;
+    font-size: larger;
+    border: 1px solid rgb(16, 15, 15);
+    transition: 1s;
+    cursor: pointer;
+    overflow: hidden;
+
+
+}
