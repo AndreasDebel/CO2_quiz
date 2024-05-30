@@ -17,3 +17,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const animatedElements = document.querySelectorAll('.dilemmaButton');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 1
+    });
+
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+});

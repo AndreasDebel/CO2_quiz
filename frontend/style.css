@@ -66,7 +66,7 @@ width: 60%;
     width: 90vw;
 }
 
-#inner2 {
+#inner2, #inner8, #inner14 {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -88,11 +88,12 @@ width: 60%;
 
 .dynamicContent8 {
     max-width: 500px;
-
-
+    font-size: larger;
 }
-#dynamicContent{
+
+#dynamicContent, #dynamicContent4, #dynamicContent7, #dynamicContent3 {
     max-width: 600px;
+    font-size: larger;
 }
 
 
@@ -223,7 +224,15 @@ align-items: center;
         transform: translateY(0);
     }
 
+    .dilemmaButton{
+        opacity: 0;
+        transition: opacity 4s ease, transform 4s ease;
+    }
 
+    .dilemmaButton.visible{
+        opacity: 1;
+        transform: translateY(0);
+    }
 
 
     
@@ -238,6 +247,13 @@ align-items: center;
     border-radius: 10px;
 }
 
+#dynamicContent5 {
+    font-size: 20px;
+    width: 600px;
+    position: relative;
+    top: 140%;
+    right: -30%;
+}
 
 
 
