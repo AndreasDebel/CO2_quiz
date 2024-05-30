@@ -157,7 +157,7 @@ function createBubbleChart() {
       .attr('y', function(d){ return yLabel() } )
       .text( function(d){ return d + " g co2e" } )
       .style("font-size", 22)
-      .style("font-family", "Open Sans") 
+      .style("font-family", "Arial") 
       .attr("fill", "white")
       .attr('alignment-baseline', 'middle');
 
@@ -177,7 +177,7 @@ function createBubbleChart() {
         .attr('y', function(d, i){ return yLabel2(i) } )
         .text(function(d, i){ if (i == 0) {return "Chat med AI"} else {return "Streaming"}})
         .style("font-size", 22)
-        .style("font-family", "Open Sans") 
+        .style("font-family", "Arial") 
         .attr("fill", "white")
         .attr('alignment-baseline', 'middle');
     
