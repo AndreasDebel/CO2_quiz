@@ -4,7 +4,7 @@ let previousEmissions = []; // Array to store emissions for each section
 
 // Update emissions based on the choices made in dilemma 1
 document.getElementById('dillema1Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte havregryn med frugt, og udover at det formentlig er det sundeste valg, så er det faktisk også det bedste valg i forhold til klimaet. Det udleder nemlig kun 1472 gram CO2.";
+    document.getElementById('dynamicContent').innerText = "Du valgte havregryn med frugt. Udover at det formentlig er det sundeste valg, så er det faktisk også det bedste valg i forhold til klimaet. Det udleder nemlig kun 1472 gram CO2.";
     yourCO2emission += 1472;
     previousEmissions[currentSection] = 1472;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
@@ -18,7 +18,7 @@ document.getElementById('dillema1Knap2').addEventListener('click', function() {
 });
 
 document.getElementById('dillema1Knap3').addEventListener('click', function() {
-    document.getElementById('dynamicContent').innerText = "Du valgte brød med peanutbutter og avocado, et lækkert valg, men det er også den største CO2-udleder af de tre måltider, du kunne have valgt. Dette måltid udleder nemlig 2319 gram CO2, hvilket er omkring 850 gram CO2 mere end det bedste valg.";
+    document.getElementById('dynamicContent').innerText = "Du valgte brød med peanutbutter og avocado. Det er et lækkert valg, men også den største CO2-udleder af de tre måltider, du kunne have valgt. Dette måltid udleder nemlig 2319 gram CO2, hvilket er omkring 850 gram CO2 mere end det bedste valg.";
     yourCO2emission += 2319;
     previousEmissions[currentSection] = 2319;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
