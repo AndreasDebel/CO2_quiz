@@ -157,9 +157,42 @@ function stackedBarChart() {
             .style("fill", "white")
             .style("font-size", "12px");
 
-    }).catch(function (error) {
+        // create info box
+        const infoBox = d3.select("#infoBox");
+
+        // define legend information
+        const legendInfo = {
+            "Landbrug": "Landbrug: Dette refererer til emissioner fra landbrugsaktiviteter.",
+            "ILUC": "ILUC: Emissioner fra ændringer i arealanvendelsen.",
+            "Forarbejdning": "Forarbejdning: Emissioner fra forarbejdning.",
+            "Emballage": "Emballage: Emissioner fra emballage.",
+            "Transport": "Transport: Emissioner fra transport.",
+            "Detail": "Detail: Emissioner fra detailhandel."
+        };
+
+        // info box events
+        const legendMouseover = function (event, d) {
+            infoBox.style("opacity", .8);
+        };
+        const legendMousemove = function (event, d) {
+            infoBox
+                .html(legendInfo[d])
+                .style("top", (event.pageY - 30) + "px")
+                .style("left", (event.pageX + 10) + "px");
+        };
+        const legendMouseleave = function () {
+            infoBox.style("opacity", 0);
+        };
+
+        // attach info box events to legend items
+        legendItems.on("mouseover", legendMouseover)
+            .on("mousemove", legendMousemove)
+            .on("mouseleave", legendMouseleave);
+
+    }).catch(function(error) {
         console.error('Error loading or parsing data:', error);
     });
 }
 
+// Run the chart function
 stackedBarChart();
