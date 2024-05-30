@@ -246,6 +246,13 @@ align-items: center;
     border-radius: 10px;
 }
 
+#dynamicContent5 {
+    font-size: 20px;
+    width: 600px;
+    position: relative;
+    top: 140%;
+    right: -30%;
+}
 
 
 
