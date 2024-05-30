@@ -36,6 +36,8 @@ fetch(apiUrlGPT)
   // opdater valuesToShow med emittors
   .then((foods) => {
     valuesToShow = [];
+    // foods[11] henter CO2e udledningen pr. ChatGPT-henvendelse. Vi regner med, at man laver 5 søgninger i minuttet i 90 minutter. Det divideres med 2, da databasens kolonne ikke godtog decimaltal (det var nemlig kun 0.5g). Vi nåede ikke at fixe det på den rigtige måde.
+    // foods[10] henter CO2e udledningen pr. time streaming. Det ganges med 1.5, da man forventes at streame i 1½ time.
     valuesToShow = [(foods[11].gram_co2e_pr_unit*5*90/2), (foods[10].gram_co2e_pr_unit*1.5)]
     // console.log(valuesToShow);
 

@@ -2,6 +2,7 @@ let yourCO2emission = 0;
 let displayYourCO2emission = document.getElementById('yourEmission');
 let previousEmissions = []; // Array to store emissions for each section
 
+
 // Update emissions based on the choices made in dilemma 1
 document.getElementById('dillema1Knap1').addEventListener('click', function() {
     document.getElementById('dynamicContent').innerText = "Du valgte havregryn med frugt. Udover at det formentlig er det sundeste valg, så er det faktisk også det bedste valg i forhold til klimaet. Det udleder nemlig kun 1472 gram CO2.";
@@ -63,14 +64,14 @@ document.getElementById('dillema3Knap3').addEventListener('click', function() {
 
 // Update emissions based on the choices made in dilemma 4
 document.getElementById('dillema4Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent4').innerText = "Du valgte til frokost steak med pommes og sauce. Det er en klassisk go to ret, men denne ret udleder faktisk 12,75 kilo CO2, hvor retten med falafel kun udleder 750 gram CO2. På grafen kan du også se, hvilke dele af retten der virkelig er en byrde for CO2-udledningen.";
+    document.getElementById('dynamicContent2').innerText = "Du valgte til frokost steak med pommes og sauce. Det er en klassisk go to ret, men denne ret udleder faktisk 12,75 kilo CO2, hvor retten med falafel kun udleder 750 gram CO2. På grafen kan du også se, hvilke dele af retten der virkelig er en byrde for CO2-udledningen.";
     yourCO2emission += 12750;
     previousEmissions[currentSection] = 12750;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
 });
 
 document.getElementById('dillema4Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent4').innerText = "Du valgte til frokost falafel med ris og salat. Udover at det er en relativt sund og lækker ret, udleder den faktisk heller ikke særlig meget CO2. Den udleder nemlig kun 750 gram CO2, og hvis du sammenligner dette med den anden ret, som udleder 12,75 kilo CO2, er dette valg rigtig fornuftigt. På grafen kan du også se, hvilke dele af retten der virkelig er en byrde for CO2-udledningen.";
+    document.getElementById('dynamicContent2').innerText = "Du valgte til frokost falafel med ris og salat. Udover at det er en relativt sund og lækker ret, udleder den faktisk heller ikke særlig meget CO2. Den udleder nemlig kun 750 gram CO2, og hvis du sammenligner dette med den anden ret, som udleder 12,75 kilo CO2, er dette valg rigtig fornuftigt. På grafen kan du også se, hvilke dele af retten der virkelig er en byrde for CO2-udledningen.";
     yourCO2emission += 750;
     previousEmissions[currentSection] = 750;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";

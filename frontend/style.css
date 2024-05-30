@@ -72,9 +72,8 @@ width: 60%;
     justify-content: center;
     align-items: center;
 
-
 }
-#inner4, #inner6, #inner12, #inner16 {
+#inner4, #inner6, #inner8, #inner12, #inner16 {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row-reverse;
@@ -196,7 +195,7 @@ align-items: center;
 
 
   
-.dilemmaButton:hover, .backbtn:hover, .forwardbtn:hover, .topbtn:hover {
+.dilemmaButton:hover, .backbtn:hover, .forwardbtn:hover, .topbtn:hover, #updateChartBtn:hover {
     background-color: rgba(3, 32, 58, 0.947);
     border: 1px solid white;
 }
@@ -227,8 +226,9 @@ align-items: center;
 
 
 
+    
 
-#dynamicContent3 {
+#dynamicContent1, #dynamicContent2, #dynamicContent3 {
     font-size: 20px;
     width: 600px;
     padding: 30px;
@@ -237,7 +237,6 @@ align-items: center;
     box-sizing: border-box; /* Include padding and border in the element's total width */
     border-radius: 10px;
 }
-
 
 
 
@@ -286,19 +285,20 @@ align-items: center;
     /* Udseende */
     color: white;
     background-color: rgba(35, 137, 227, 0.901);
-    padding: 6px;
+    padding: 8px;
     border: 1px solid rgb(0, 0, 0);
-    border-radius: px;
+    border-radius: 5px;
     font-size: larger;
     transition: 1s;
-
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 .forwardbtn {
 
     color: white;
     background-color: rgba(35, 137, 227, 0.901);
-    padding: 6px;
+    padding: 8px;
     border: 1px solid rgb(21, 19, 19);
     border-radius: 5px;
     font-size: larger;
@@ -311,7 +311,7 @@ align-items: center;
 .topbtn {
     color: white;
     background-color: #2389e3e6;
-    padding: 6px;
+    padding: 8px;
     border: 1px solid rgb(21, 19, 19);
     border-radius: 5px;
     font-size: larger;
