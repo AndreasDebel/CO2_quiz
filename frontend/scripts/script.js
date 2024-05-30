@@ -135,14 +135,14 @@ document.getElementById('dillema7Knap2').addEventListener('click', function() {
 
 // Update emissions based on the choices made in dilemma 8
 document.getElementById('dillema8Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent8').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
+    document.getElementById('dynamicContent8').innerText = "Du valgte at se Netflix i stedet for at udforske det store web sammen med mig, ChatGPT. Selvfølgelig skal der også være plads til det valg, men udover at du ikke får ny viden, udleder du faktisk også mere CO2 end hvis du havde interageret med mig.";
     yourCO2emission += 600;
     previousEmissions[currentSection] = 600;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
 });
 
 document.getElementById('dillema8Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent8').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
+    document.getElementById('dynamicContent8').innerText = "Du valgte at lave hjernegymnastik med ChatGPT. Sikke en god måde at slutte din dag på! Udover at du sandsynligvis bliver MEGET klogere, udleder du faktisk også mindre CO2 end hvis du havde valgt at se Netflix.";
     yourCO2emission += 450;
     previousEmissions[currentSection] = 450;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
