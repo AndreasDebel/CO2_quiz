@@ -196,8 +196,8 @@ align-items: center;
 
 
   
-.dilemmaButton:hover {
-    background-color: rgba(43, 38, 38, 0.9);
+.dilemmaButton:hover, .backbtn:hover, .forwardbtn:hover, .topbtn:hover {
+    background-color: rgba(3, 32, 58, 0.947);
     border: 1px solid white;
 }
 
@@ -267,7 +267,7 @@ align-items: center;
 
 
 .dilemmaButton {
-    color: rgb(217, 209, 209);
+    color: rgb(255, 255, 255);
     width: 20%;
     height: 80%;
     background-color: rgba(35, 137, 227, 0.901);
@@ -288,8 +288,9 @@ align-items: center;
     background-color: rgba(35, 137, 227, 0.901);
     padding: 6px;
     border: 1px solid rgb(0, 0, 0);
-    border-radius: 8px;
+    border-radius: px;
     font-size: larger;
+    transition: 1s;
 
 }
 
@@ -299,9 +300,12 @@ align-items: center;
     background-color: rgba(35, 137, 227, 0.901);
     padding: 6px;
     border: 1px solid rgb(21, 19, 19);
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: larger;
-  
+    transition: 1s;
+    padding-left: 1%;
+    padding-right: 1%;
+
 }
 
 .topbtn {
@@ -309,9 +313,11 @@ align-items: center;
     background-color: #2389e3e6;
     padding: 6px;
     border: 1px solid rgb(21, 19, 19);
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: larger;
-   
+    transition: 1s;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 #updateChartBtn{
@@ -325,6 +331,7 @@ align-items: center;
     transition: 1s;
     cursor: pointer;
     overflow: hidden;
-
+    padding-left: 1%;
+    padding-right: 1%;
 
 }
