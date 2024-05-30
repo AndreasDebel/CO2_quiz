@@ -33,9 +33,9 @@ body {
 
 /* Nedenstående kode låser siden, så man ikke kan scrolle selv - så SKAL man bruge knapperne */
 
-/*body, html {
+body, html {
     overflow: hidden;
-} */
+}
 
 
 .textbox1 {
@@ -342,5 +342,16 @@ align-items: center;
     left: -16%;
     top: -10%;
     position: relative;
-
 }
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    padding: 5px;
+    font: 12px sans-serif;
+    background: lightgrey;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+  }

@@ -8,8 +8,10 @@
   </head>
   <!-- Linket til d3 library -->
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
   <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  
 
   <body>
     <!-- Buttons til quiz scroller -->
@@ -441,14 +443,26 @@
       <div class="header"></div>
       <div class="innermain" id="inner17">
         <h1>Nu er din dag til ende</h1>
-        <h3>Det udleder heldigvis ikke noget CO2 at gå i seng. Undtagen når du ligger og prutter hele natten.</h3><h3><br><br>Her er din samlede CO2-udledning:</h3>
+        <h3>Det udleder heldigvis ikke noget CO2 at gå i seng. Undtagen når du ligger og prutter hele natten. <br>Her er din samlede CO2-udledning:</h3>
         <div id="yourEmission" style="color: lightblue; font-size: 40px">
           Du har endnu ikke udledt noget CO2
+        </div>
+        <div>
+          <br><br>
+          <!-- <button onclick="update(piedata1)">Testdata</button> -->
+          <button onclick="update(piedata2)">Din udledning</button>
+          <button onclick="update(piedata3)">Uden rejsen</button>
+        </div>
+        <div id="piechart">
+        <div id="tooltipPie" class="tooltipPie" style="opacity:0;"></div>
+
         </div>
       </div>
     </div>
 
-    <div id="chart"></div>
+
+
+    
     <script src="scripts/animations/btnAnimation.js"></script>
     <script src="scripts/graf1.js"></script>
     <script src="scripts/stackedBarChart.js"></script>
@@ -457,10 +471,8 @@
     <script src="scripts/rejsekort.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/transport.js"></script>
-    <script
-      type="application/javascript"
-      src="scripts/bubbleplot_GPT_Streaming.js"
-    ></script>
+    <script type="application/javascript" src="scripts/bubbleplot_GPT_Streaming.js"></script>
     <script type="module" src="scripts/bubbleplot_motocross_baal.js"></script>
+    <script src="scripts/piechart_result.js"></script>
   </body>
 </html>
