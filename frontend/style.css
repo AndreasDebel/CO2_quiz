@@ -21,6 +21,10 @@ body {
     background-color: rgba(30, 76, 116, 0.901);
 }
 
+#main10 {
+    position: relative; /* Dette gør det muligt for absolut positionerede elementer at forankre sig til denne beholder */
+}
+
 #main2, #main5, #main8, #main11, #main14, #main17 {
     background-color: rgba(45, 107, 161, 0.719);
 }
@@ -121,15 +125,14 @@ p {
     pointer-events: none;
 }
 
-#factBox {
-    position: absolute;
-    top: 100px; /* Adjust this value as needed */
-    left: 100px; /* Adjust this value as needed */
+#factBox  {
+    position: absolute !important;
     visibility: hidden;
     background-color: white;
     border: 1px solid black;
     padding: 10px;
     color: black;
+    z-index: 1000;
 }
 
 
@@ -237,7 +240,7 @@ align-items: center;
 
     
 
-#dynamicContent1, #dynamicContent2, #dynamicContent3, .textContainer, #dynamicContent5, .textFor6, .textFor8  {
+#dynamicContent1, #dynamicContent2, #dynamicContent3, .textContainer, .textFor6, .textFor8  {
     font-size: 20px;
     width: 600px;
     padding: 30px;
@@ -247,32 +250,19 @@ align-items: center;
     border-radius: 10px;
 }
 
+
 #dynamicContent5 {
     font-size: 20px;
     width: 600px;
-    position: relative;
-    top: 100%;
-    right: -30%;
+    padding: 30px;
+    border: 2px solid #ffffffe6;
+    overflow-wrap: break-word;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    border-radius: 10px;
+    position: absolute;
+    top: 500;
+    left: 30;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

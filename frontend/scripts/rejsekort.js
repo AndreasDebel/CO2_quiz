@@ -44,9 +44,14 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
             // Show the fact box and set its content
             d3.select("#factBox")
                 .style("visibility", "visible")
-                .style("top", (event.pageY + 10) + "px")  // Adjust 10px as needed
-                .style("left", (event.pageX + 10) + "px") // Adjust 10px as needed
                 .html("<div><strong>" + d.rejsested + "</strong><br><strong>Transportmiddel:</strong> " + d.transportmiddel + "<br><strong>Rejsetid:</strong> " + d.fact + "<br><strong>CO2-udledning:</strong> " + d.co2 + "</div>");
+        })
+        .on("mousemove", function(event) {
+            var container = d3.select("#uniqueSvg").node().getBoundingClientRect();
+            // Update the position of the fact box as the mouse moves
+            d3.select("#factBox")
+                .style("top", (event.clientY - container.top + -120) + "px")
+                .style("left", (event.clientX - container.left + 80) + "px");
         })
         .on("mouseout", function() {
             // Hide the fact box
