@@ -208,11 +208,12 @@ d3.selectAll('.main .header')
             }
 
             if (i !== numOfHeaders - 1) {
+                let forwardBtnText = i === 0 ? 'Start quiz' : 'Næste side';
                 d3.select(this)
                     .append('button')
                         .attr('class', 'forwardbtn')
                         .attr('onclick', 'scrollForward()')
-                        .text('Næste side');
+                        .text(forwardBtnText);
                 d3.select(this)
                     .append('img')
                         .attr('class', 'arrowDown')
