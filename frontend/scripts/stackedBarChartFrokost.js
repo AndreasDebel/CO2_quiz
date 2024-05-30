@@ -89,7 +89,7 @@ function stackedBarChart() {
         const mousemove = function (event, d) {
             const formater = d3.format(",");
             tooltip
-                .html(`Value: ${formater(d[1] - d[0])}`) // Adjusted to show the segment value
+                .html(`${formater(d[1] - d[0])}`) // Adjusted to show the segment value
                 .style("top", (event.pageY - 30) + "px")
                 .style("left", (event.pageX + 10) + "px");
         };
@@ -121,7 +121,7 @@ function stackedBarChart() {
             .attr("x", -(margin.left) * 0.9)
             .attr("y", -(margin.top) / 1.2)
             .attr("text-anchor", "start")
-            .text("CO2 Emissions by Product")
+            .text("CO2 Emissioner for forskellige madvarer.")
             .style("fill", "white");
 
         // set X axis label
@@ -130,7 +130,7 @@ function stackedBarChart() {
             .attr("x", width / 2)
             .attr("y", height + margin.bottom / 1.6)
             .attr("text-anchor", "middle")
-            .text("CO2 Emissions (kg)")
+            .text("CO2 Emissioner (kg)")
             .style("fill", "white");
 
         // set legend
