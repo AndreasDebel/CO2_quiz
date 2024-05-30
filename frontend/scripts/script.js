@@ -189,8 +189,11 @@ function scrollToTop() {
 
 d3.selectAll('.main .header')
     .each(function(d, i) {
-        if (i % 2 === 0) {
-            const numOfHeaders = d3.selectAll('.main .header').size();
+        const numOfHeaders = d3.selectAll('.main .header').size();
+        const isEven = i % 2 === 0;
+        const isLastSection = i === numOfHeaders - 1;
+
+        if (isEven || isLastSection) {
             if (i !== 0) {
                 d3.select(this)
                     .append('button')
