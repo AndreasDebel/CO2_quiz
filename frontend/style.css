@@ -89,7 +89,6 @@ body {
 }
 #dynamicContent{
     max-width: 600px;
-    padding-top: 20%;
 }
 
 
@@ -220,7 +219,15 @@ align-items: center;
         transform: translateY(0);
     }
 
+    .dilemmaButton{
+        opacity: 0;
+        transition: opacity 4s ease, transform 4s ease;
+    }
 
+    .dilemmaButton.visible{
+        opacity: 1;
+        transform: translateY(0);
+    }
 
 
 
