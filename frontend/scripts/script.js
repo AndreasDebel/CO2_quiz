@@ -26,14 +26,12 @@ document.getElementById('dillema1Knap3').addEventListener('click', function() {
 
 // Update emissions based on the choices made in dilemma 2
 document.getElementById('dillema2Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent1').innerText = "Du valgte en hurtig tur i det kolde vand. Måske er du en rigtig viking, eller også tænker du på klimaet, for dette er bestemt det bedste valg, hvis klimaet er i tankerne. Prøv at afspille grafen og se, hvor meget dit valg udleder i CO2.";
     yourCO2emission += 10;
     previousEmissions[currentSection] = 10;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
 });
 
 document.getElementById('dillema2Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent1').innerText = "Du valgte en lang tur i det varme vand. Det er bestemt heller ikke dårligt, hvis man har brug for at slappe af, men hvis det er klimaet, du har i tankerne, så er det bestemt ikke det rigtige valg. Prøv at afspille grafen og se, hvor meget dit valg udleder i CO2.";
     yourCO2emission += 723;
     previousEmissions[currentSection] = 723;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
@@ -102,14 +100,12 @@ document.getElementById('dillema5Knap3').addEventListener('click', function() {
 
 // Update emissions based on the choices made in dilemma 6
 document.getElementById('dillema6Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent6').innerText = "Du valgte den mere ekstreme hobby, nemlig motocross. Der er fart over feltet og duften af benzin, men det er langt fra den mest klimavenlige hobby. Du udleder nemlig helt op til 26,45 kilo CO2 i timen.";
     yourCO2emission += 53000;
     previousEmissions[currentSection] = 53000;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
 });
 
 document.getElementById('dillema6Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent6').innerText = "Du valgte den mere stille og rolige hobby, hvor man er i ét med naturen, nemlig friluftsliv. Denne hobby udleder omkring 6,6 kilo CO2 i timen, hvis der er et bål eller andet tændt.";
     yourCO2emission += 13000;
     previousEmissions[currentSection] = 13000;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
@@ -134,14 +130,12 @@ document.getElementById('dillema7Knap2').addEventListener('click', function() {
 
 // Update emissions based on the choices made in dilemma 8
 document.getElementById('dillema8Knap1').addEventListener('click', function() {
-    document.getElementById('dynamicContent8').innerText = "Du valgte mulighed 1. Her er det tilsvarende indhold.";
     yourCO2emission += 600;
     previousEmissions[currentSection] = 600;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
 });
 
 document.getElementById('dillema8Knap2').addEventListener('click', function() {
-    document.getElementById('dynamicContent8').innerText = "Du valgte mulighed 2. Her er det tilsvarende indhold.";
     yourCO2emission += 450;
     previousEmissions[currentSection] = 450;
     displayYourCO2emission.textContent = yourCO2emission + "g CO2e";
