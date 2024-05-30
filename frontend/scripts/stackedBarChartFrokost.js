@@ -157,6 +157,50 @@ function stackedBarChart() {
             .style("fill", "white")
             .style("font-size", "12px");
 
+        // Info box for legend
+        const infoBox = d3.select("body")
+            .append("div")
+            .attr("id", "infoBox")
+            .attr("class", "info-box")
+            .style("position", "absolute")
+            .style("opacity", 0)
+            .style("background-color", "white")
+            .style("border", "solid 1px")
+            .style("border-radius", "5px")
+            .style("padding", "10px")
+            .style("pointer-events", "none")
+            .style("color", "black"); // Ensuring the text color is visible
+
+        const legendInfo = {
+            "Landbrug": "Landbrug: Dette refererer til emissioner fra landbrugsaktiviteter.",
+            "ILUC": "ILUC: Indirekte ændring af arealanvendelse emissioner.",
+            "Forarbejdning": "Forarbejdning: Emissioner fra forarbejdning.",
+            "Emballage": "Emballage: Emissioner fra emballage.",
+            "Transport": "Transport: Emissioner fra transport.",
+            "Detail": "Detail: Emissioner fra detailhandel."
+        };
+
+        // Legend tooltip events
+        const legendMouseover = function() {
+            infoBox.style("opacity", .8);
+            d3.select(this).style("opacity", .5);
+        };
+        const legendMousemove = function(event, d) {
+            infoBox
+                .html(legendInfo[d]) // Show the appropriate description
+                .style("top", (event.pageY - 30) + "px")
+                .style("left", (event.pageX + 10) + "px");
+        };
+        const legendMouseleave = function() {
+            infoBox.style("opacity", 0);
+            d3.select(this).style("opacity", 1);
+        };
+
+        legendItems
+            .on("mouseover", legendMouseover)
+            .on("mousemove", legendMousemove)
+            .on("mouseleave", legendMouseleave);
+
     }).catch(function (error) {
         console.error('Error loading or parsing data:', error);
     });
