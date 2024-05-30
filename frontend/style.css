@@ -237,11 +237,11 @@ align-items: center;
 
     
 
-#dynamicContent1, #dynamicContent2, #dynamicContent3 {
+#dynamicContent1, #dynamicContent2, #dynamicContent3, .textContainer, #dynamicContent5, .textFor6, .textFor8  {
     font-size: 20px;
     width: 600px;
     padding: 30px;
-    border: 1px solid #ffffffe6;
+    border: 2px solid #ffffffe6;
     overflow-wrap: break-word;
     box-sizing: border-box; /* Include padding and border in the element's total width */
     border-radius: 10px;
@@ -251,7 +251,7 @@ align-items: center;
     font-size: 20px;
     width: 600px;
     position: relative;
-    top: 140%;
+    top: 100%;
     right: -30%;
 }
 
