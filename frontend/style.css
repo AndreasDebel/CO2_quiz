@@ -321,7 +321,7 @@ align-items: center;
 
 #updateChartBtn{
     color: rgb(217, 209, 209);
-    width: 30%;
+    width: 20%;
     height: 10%;
     background-color: rgba(35, 137, 227, 0.901);
     border-radius: 5px;
@@ -332,5 +332,8 @@ align-items: center;
     overflow: hidden;
     padding-left: 1%;
     padding-right: 1%;
+    left: -16%;
+    top: -10%;
+    position: relative;
 
 }
